@@ -20,7 +20,7 @@
     "IntroduceMySelfAPI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "IntroduceMySelf",
+      "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
