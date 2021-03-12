@@ -32,9 +32,11 @@ namespace IntroduceMySelfAPI.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("MyName")]
-        public async ValueTask<string> GetName()
+        public async ValueTask<Test> GetName()
         {
-            return await _redisCacheClient.GetDbFromConfiguration().GetAsync<string>("MyName");
+            var item =  await _redisCacheClient.GetDbFromConfiguration().GetAsync<Test>("MyName");
+
+            return item;
         }
 
         /// <summary>

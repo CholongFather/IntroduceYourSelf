@@ -29,4 +29,9 @@ namespace IntroduceMySelf.DTO
 
         public List<string> SkillInventory { get; set; }
     }
+
+    public class Test
+    {
+        public string TestName { get; set; }
+    }
 }
