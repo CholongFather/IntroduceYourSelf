@@ -12,11 +12,6 @@ namespace IntroduceMySelfAPI.Controllers
     [Route("[controller]")]
     public class IntroduceMySelfController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<IntroduceMySelfController> _logger;
 
         public IntroduceMySelfController(ILogger<IntroduceMySelfController> logger)
@@ -25,7 +20,7 @@ namespace IntroduceMySelfAPI.Controllers
         }
 
         [HttpGet]
-        public async IEnumerable<IntroduceMySelfModel> Get()
+        public async ValueTask<Introduce> Get()
         {
 
             return null;
