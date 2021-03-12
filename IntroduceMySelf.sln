@@ -9,11 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{6265CB0D-228
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{DB8CECA8-9A09-4EFB-B56F-1D435F30EEC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntroduceMySelf.API", "IntroduceMySelfAPI\IntroduceMySelf.API.csproj", "{06E04A8B-99F7-464B-842E-BFCC377A370A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntroduceMySelf.API", "IntroduceMySelfAPI\IntroduceMySelf.API.csproj", "{06E04A8B-99F7-464B-842E-BFCC377A370A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{D3ACBCC9-17FC-446F-9429-9F972F43258A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntroduceMySelf.DTO", "IntroduceMySelf.DTO\IntroduceMySelf.DTO.csproj", "{07D78777-1DF0-4DF4-84CF-4194EB5A8E02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntroduceMySelf.DTO", "IntroduceMySelf.DTO\IntroduceMySelf.DTO.csproj", "{07D78777-1DF0-4DF4-84CF-4194EB5A8E02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{3DDEC761-3E87-48DF-A532-3BFF9A34DEFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

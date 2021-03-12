@@ -10,6 +10,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using StackExchange.Redis;
+using StackExchange.Redis.Extensions.Core;
+using StackExchange.Redis.Extensions.Core.Configuration;
+
+using StackExchange.Redis.Extensions.Newtonsoft;
 
 namespace IntroduceMySelfAPI
 {
@@ -31,6 +36,12 @@ namespace IntroduceMySelfAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "IntroduceMySelfAPI", Version = "v1" });
             });
+
+            services.AddStackExchangeRedisExtensions<NewtonsoftSerializer>((options) =>
+            {
+                return Configuration.GetSection("Redis").Get<RedisConfiguration>();
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

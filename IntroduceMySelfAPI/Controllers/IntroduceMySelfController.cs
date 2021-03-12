@@ -5,6 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using IntroduceMySelf.DTO;
+using Newtonsoft.Json;
+using StackExchange.Redis;
+using StackExchange.Redis.Extensions.Core;
+using StackExchange.Redis.Extensions.Core.Abstractions;
+using StackExchange.Redis.Extensions.Newtonsoft;
+using StackExchange.Redis.Extensions;
 
 namespace IntroduceMySelfAPI.Controllers
 {
@@ -13,17 +19,18 @@ namespace IntroduceMySelfAPI.Controllers
     public class IntroduceMySelfController : ControllerBase
     {
         private readonly ILogger<IntroduceMySelfController> _logger;
+        private readonly IRedisCacheClient _redisCacheClient;
 
-        public IntroduceMySelfController(ILogger<IntroduceMySelfController> logger)
+        public IntroduceMySelfController(ILogger<IntroduceMySelfController> logger, IRedisCacheClient redisCacheClient)
         {
             _logger = logger;
+            _redisCacheClient = redisCacheClient;
         }
 
         [HttpGet]
-        public async ValueTask<Introduce> Get()
+        public async ValueTask<string> Get()
         {
-
-            return null;
+            return await _redisCacheClient.GetDbFromConfiguration().GetAsync<string>("MyName");
         }
     }
 }
