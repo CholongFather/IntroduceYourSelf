@@ -20,7 +20,9 @@ namespace SangWanPortfolio.Web
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.UseKestrel();
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseUrls("http://localhost:5000");
                 });
     }
 }
