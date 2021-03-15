@@ -28,29 +28,17 @@ namespace IntroduceMySelfAPI.Controllers
         }
 
         /// <summary>
-        /// 이름 데이터
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet("MyName")]
-        public async ValueTask<Test> GetName()
-        {
-            var item =  await _redisCacheClient.GetDbFromConfiguration().GetAsync<Test>("MyName");
-
-            return item;
-        }
-
-        /// <summary>
-        /// 소개데이터
+        /// 소개 데이터 Get
         /// </summary>
         /// <returns></returns>
         [HttpGet("Introduce")]
         public async ValueTask<Introduce> GetIntroduce()
         {
-            return await _redisCacheClient.GetDbFromConfiguration().GetAsync<Introduce>("SangWan");
+            return await _redisCacheClient.GetDbFromConfiguration().GetAsync<Introduce>("sangwan");
         }
 
         /// <summary>
-        /// 기본 데이터 셋
+        /// 기본 데이터 세팅
         /// </summary>
         /// <returns></returns>
         [HttpPost("SetSangWan")]
@@ -86,7 +74,37 @@ namespace IntroduceMySelfAPI.Controllers
             sangWan.Carrer.Add(professionalExperience);
             sangWan.Carrer.Add(professionalExperience2);
 
-            await _redisCacheClient.GetDbFromConfiguration().AddAsync<Introduce>("SangWan", sangWan);
+            await _redisCacheClient.GetDbFromConfiguration().AddAsync<Introduce>("sangwan", sangWan);
+        }
+
+        /// <summary>
+        /// 기본 소개 내용을 추가합니다.
+        /// </summary>
+        /// <param name="introduce">소개 내용</param>
+        /// <returns></returns>
+        [HttpPost("SetCustom")]
+        public async ValueTask PostIntroduceCustom(Introduce introduce)
+        {
+            await _redisCacheClient.GetDbFromConfiguration().AddAsync<Introduce>(introduce.Author.Name.ToLower(), introduce);
+        }
+
+        /// <summary>
+        /// career를 추가합니다.
+        /// </summary>
+        /// <param name="name">career 추가할 사람 이름</param>
+        /// <param name="career">career 내용</param>
+        /// <returns>200 ok</returns>
+        [HttpPost("SetCareer")]
+        public async ValueTask PostIntroduceCustom(string name, ProfessionalExperience career)
+        {
+            var introduceItem = await _redisCacheClient.GetDbFromConfiguration().GetAsync<Introduce>(name);
+
+            if (introduceItem.Carrer != null)
+                introduceItem.Carrer.Add(career);
+            else
+                introduceItem.Carrer = new List<ProfessionalExperience>() { career };
+
+            await _redisCacheClient.GetDbFromConfiguration().ReplaceAsync<Introduce>(introduceItem.Author.Name.ToLower(), introduceItem);
         }
     }
 }

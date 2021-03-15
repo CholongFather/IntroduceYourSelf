@@ -42,7 +42,12 @@ namespace IntroduceMySelfAPI
                 return Configuration.GetSection("Redis").Get<RedisConfiguration>();
             });
 
-            services.AddCors(o => o.AddPolicy("CorsPolicy", builder => { builder.SetIsOriginAllowed(_ => true).AllowAnyMethod().AllowAnyHeader().AllowCredentials(); }));
+            services.AddCors(o => o.AddPolicy("AllowAll", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,7 +62,7 @@ namespace IntroduceMySelfAPI
 
             app.UseRouting();
 
-            app.UseCors("CorsPolicy");
+            app.UseCors("AllowAll");
 
             app.UseAuthorization();
 
