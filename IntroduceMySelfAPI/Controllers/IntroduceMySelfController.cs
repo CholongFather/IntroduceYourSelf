@@ -57,8 +57,8 @@ namespace IntroduceMySelfAPI.Controllers
             ///Json 파일 읽어서 하는걸로 바꿀것.
             var professionalExperience = new ProfessionalExperience()
             {
-                ProjectName = "참좋은여행",
-                Company = "참좋은여행",
+                ProjectName = "좋좋은여행",
+                Company = "좋좋은여행",
                 ImageLink = "#",
                 SkillInventory = new List<string> { "Jquery", "ASP.NET", "반응형" },
             };

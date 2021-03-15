@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="IdentityModel" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.4" />
     <PackageReference Include="StackExchange.Redis" Version="2.2.4" />
     <PackageReference Include="StackExchange.Redis.Extensions.AspNetCore" Version="6.4.5" />
     <PackageReference Include="StackExchange.Redis.Extensions.Core" Version="6.4.5" />

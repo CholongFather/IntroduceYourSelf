@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -14,7 +15,9 @@ using StackExchange.Redis;
 using StackExchange.Redis.Extensions.Core;
 using StackExchange.Redis.Extensions.Core.Configuration;
 
+
 using StackExchange.Redis.Extensions.Newtonsoft;
+using IdentityModel;
 
 namespace IntroduceMySelfAPI
 {
@@ -48,6 +51,15 @@ namespace IntroduceMySelfAPI
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
+
+            services.AddAuthentication("Bearer")
+                    .AddJwtBearer("Bearer", options => 
+                    {
+                        options.Authority = "http://localhost:8080";
+                        options.RequireHttpsMetadata = false;
+                        options.TokenValidationParameters.NameClaimType = JwtClaimTypes.Name;
+                        options.Audience = "introduce";
+                    });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
