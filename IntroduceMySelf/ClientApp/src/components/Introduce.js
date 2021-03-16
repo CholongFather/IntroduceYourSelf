@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-export class FetchData extends Component {
-  static displayName = FetchData.name;
+export class Introduce extends Component {
+    static displayName = Introduce.name;
 
   constructor(props) {
     super(props);
@@ -33,7 +33,7 @@ export class FetchData extends Component {
   render() {
     let contents = this.state.loading
       ? <p><em>Loading...</em></p>
-        : FetchData.renderIntroduceTable(this.state.introduce);
+        : Introduce.renderIntroduceTable(this.state.introduce);
 
     return (
       <div>
