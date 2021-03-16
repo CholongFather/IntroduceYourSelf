@@ -9,3 +9,4 @@ D:\업무\Source\repo\IntroduceYourSelf\IntroduceMySelf.DTO\obj\Debug\net5.0\Int
 D:\업무\Source\repo\IntroduceYourSelf\IntroduceMySelf.DTO\obj\Debug\net5.0\IntroduceMySelf.DTO.dll
 D:\업무\Source\repo\IntroduceYourSelf\IntroduceMySelf.DTO\obj\Debug\net5.0\ref\IntroduceMySelf.DTO.dll
 D:\업무\Source\repo\IntroduceYourSelf\IntroduceMySelf.DTO\obj\Debug\net5.0\IntroduceMySelf.DTO.pdb
+D:\업무\Source\repo\IntroduceYourSelf\IntroduceMySelf.DTO\obj\Debug\net5.0\IntroduceMySelf.DTO.csprojAssemblyReference.cache

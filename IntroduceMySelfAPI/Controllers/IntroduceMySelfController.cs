@@ -28,63 +28,27 @@ namespace IntroduceMySelfAPI.Controllers
         }
 
         /// <summary>
-        /// 소개 데이터 Get
+        /// 소개 데이터 조회
         /// </summary>
+        /// <param name="name">조회 이름</param>
         /// <returns></returns>
         [HttpGet("Introduce")]
-        public async ValueTask<Introduce> GetIntroduce()
+        public async ValueTask<Introduce> GetIntroduce(string name)
         {
-            return await _redisCacheClient.GetDbFromConfiguration().GetAsync<Introduce>("sangwan");
+            return await _redisCacheClient.GetDbFromConfiguration().GetAsync<Introduce>(name.ToLower());
         }
 
         /// <summary>
-        /// 기본 데이터 세팅
+        /// 소개 데이터 추가
         /// </summary>
+        /// <param name="introduce">소개 데이터 객체</param>
         /// <returns></returns>
-        [HttpPost("SetSangWan")]
-        public async ValueTask PostIntroduce()
+        [HttpPost("Introduce")]
+        public async ValueTask AddIntroduce(Introduce introduce)
         {
-            var sangWan = new Introduce();
-            sangWan.Author = new Author()
-            {
-                Name = "Park Sang Wan",
-                Age = 99,
-                CareerYear = (DateTime.Now - new DateTime(1990,1,1)).Days / 365,
-            };
-            sangWan.Carrer = new List<ProfessionalExperience>();
+            if (introduce?.Author == null)
+                return;
 
-
-            ///Json 파일 읽어서 하는걸로 바꿀것.
-            var professionalExperience = new ProfessionalExperience()
-            {
-                ProjectName = "좋좋은여행",
-                Company = "좋좋은여행",
-                ImageLink = "#",
-                SkillInventory = new List<string> { "Jquery", "ASP.NET", "반응형" },
-            };
-
-            ProfessionalExperience professionalExperience2 = new ProfessionalExperience()
-            {
-                ProjectName = "참좋은여행 불꽃폭발",
-                Company = "참망한여행",
-                ImageLink = "#",
-                SkillInventory = new List<string> { "Jquery 1.12.4", "반응형" },
-            };
-
-            sangWan.Carrer.Add(professionalExperience);
-            sangWan.Carrer.Add(professionalExperience2);
-
-            await _redisCacheClient.GetDbFromConfiguration().AddAsync<Introduce>("sangwan", sangWan);
-        }
-
-        /// <summary>
-        /// 기본 소개 내용을 추가합니다.
-        /// </summary>
-        /// <param name="introduce">소개 내용</param>
-        /// <returns></returns>
-        [HttpPost("SetCustom")]
-        public async ValueTask PostIntroduceCustom(Introduce introduce)
-        {
             await _redisCacheClient.GetDbFromConfiguration().AddAsync<Introduce>(introduce.Author.Name.ToLower(), introduce);
         }
 
@@ -94,17 +58,38 @@ namespace IntroduceMySelfAPI.Controllers
         /// <param name="name">career 추가할 사람 이름</param>
         /// <param name="career">career 내용</param>
         /// <returns>200 ok</returns>
-        [HttpPost("SetCareer")]
-        public async ValueTask PostIntroduceCustom(string name, ProfessionalExperience career)
+        [HttpPost("Career")]
+        public async ValueTask AddCareer(string name, ProfessionalExperience career)
         {
-            var introduceItem = await _redisCacheClient.GetDbFromConfiguration().GetAsync<Introduce>(name);
+            var introduceItem = await _redisCacheClient.GetDbFromConfiguration().GetAsync<Introduce>(name.ToLower());
 
-            if (introduceItem.Carrer != null)
-                introduceItem.Carrer.Add(career);
+            if (introduceItem.Career != null)
+            {
+                var introduceCareer = introduceItem.Career.FirstOrDefault(a => a.Index == career.Index);
+
+                if (introduceCareer != null)
+                    introduceItem.Career.Remove(introduceCareer);
+
+                introduceItem.Career.Add(career);
+            }
             else
-                introduceItem.Carrer = new List<ProfessionalExperience>() { career };
+                introduceItem.Career = new List<ProfessionalExperience>() { career };
 
             await _redisCacheClient.GetDbFromConfiguration().ReplaceAsync<Introduce>(introduceItem.Author.Name.ToLower(), introduceItem);
+        }
+
+        /// <summary>
+        /// 소개 데이터 제거
+        /// </summary>
+        /// <param name="name">이름</param>
+        /// <returns></returns>
+        [HttpDelete("Introduce/{name}")]
+        public async ValueTask RemoveIntroduce(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+                return;
+
+            await _redisCacheClient.GetDbFromConfiguration().RemoveAsync(name.ToLower());
         }
     }
 }

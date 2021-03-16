@@ -7,7 +7,7 @@ namespace IntroduceMySelf.DTO
     {
         public Author Author { get; set; }
 
-        public List<ProfessionalExperience> Carrer { get; set; }
+        public List<ProfessionalExperience> Career { get; set; }
     }
 
     public class Author
@@ -21,6 +21,8 @@ namespace IntroduceMySelf.DTO
 
     public class ProfessionalExperience
     {
+        public int Index { get; set; }
+
         public string Company { get; set; }
         
         public string ProjectName { get; set; }
