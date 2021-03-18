@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.css';
+import "@fontsource/noto-sans-kr"
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
