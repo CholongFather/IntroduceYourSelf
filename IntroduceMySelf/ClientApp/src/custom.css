@@ -1,14 +1,31 @@
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
-}
+@charset "utf-8";
+::selection {background: #ff4d4d; color: #fff;}
+*{margin:0;padding:0}
+*[class]{box-sizing:border-box}
+*[class]:before{box-sizing:border-box}
+*[class]:after{box-sizing:border-box}
+*[class]._hidden{overflow:hidden;white-space:nowrap;clip:rect(1px,1px,1px,1px);clip-path:inset(50%);position:absolute;width:1px;height:1px;margin:0;padding:0;border:0}
+*[class]._inherit{color:inherit;font-style:inherit;font-weight:inherit;font-size:inherit}
+*[class]._ellipsis{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+*[class]._left{text-align:left !important}
+*[class]._center{text-align:center !important}
+*[class]._right{text-align:right !important}
+*[class]._top{vertical-align:top !important}
+*[class]._middle{vertical-align:middle !important}
+*[class]._bottom{vertical-align:bottom !important}
+ul[class],ol[class]{list-style:none}
+fieldset{margin:0;padding:0;border:0}
+input:focus::-moz-focus-inner,button::-moz-focus-inner{border:0}
+:root{font-size:62.5%}
+html{height:100%;-webkit-text-size-adjust:100%}
+body{margin:0;height:100%;font-size:1.6rem;line-height:1.5;word-break:break-word;-webkit-text-size-adjust:none; color:#222;overflow-y:scroll;;}
+body, button, input, select, textarea {font-family: "Noto Sans KR", sans-serif, Verdana, Arial; font-weight: 400;}
+[lang*="ko"] body .local__airport{word-break:keep-all}
+button,input[type="text"],input[type="password"],select,textarea{line-height:1.5}
+input[type="text"],input[type="email"],input[type="tel"],input[type="search"],input[type="password"]{word-break:normal; vertical-align: middle;}
+a {color:#222; text-decoration: none;}
+strong {font-weight: 700;}
+table caption {display: none;}
+table {border-collapse: collapse;}
 
-code {
-  color: #E01A76;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
+.wrap h1{font-size: 3.2rem; font-weight: bold;}
