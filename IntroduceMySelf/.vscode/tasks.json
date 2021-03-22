@@ -1,0 +1,24 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+            "label": "build",
+            "command": "dotnet build SangWanPortfolio.Web.csproj",
+            "type": "shell",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+		{
+			"type": "npm",
+			"script": "build",
+			"path": "bin/Debug/net5.0/ClientApp/",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build - bin/Debug/net5.0/ClientApp",
+			"detail": "react-scripts build"
+		}
+	]
+}
