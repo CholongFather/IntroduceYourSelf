@@ -22,7 +22,10 @@ namespace IntroduceMySelfAPI
                 {
                     webBuilder.UseKestrel();
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("http://localhost:8080/");
-                });
+					webBuilder.ConfigureKestrel(serverOptions =>
+					{
+						serverOptions.ListenAnyIP(8080);
+					});
+				});
     }
 }

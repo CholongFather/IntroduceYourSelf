@@ -22,7 +22,10 @@ namespace SangWanPortfolio.Web
                 {
                     webBuilder.UseKestrel();
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("http://localhost:5000");
-                });
+					webBuilder.ConfigureKestrel(serverOptions =>
+					{
+						serverOptions.ListenAnyIP(5000);
+					});
+				});
     }
 }
