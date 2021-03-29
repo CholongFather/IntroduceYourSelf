@@ -1,3 +1,6 @@
+using Blazorise;
+using Blazorise.Material;
+using Blazorise.Icons.FontAwesome;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +28,12 @@ namespace CholongFathersPortfolio.Server
 
 			services.AddControllersWithViews();
 			services.AddRazorPages();
+			services.AddBlazorise(options =>
+			{
+				options.ChangeTextOnKeyPress = true;
+			})
+			.AddMaterialProviders()
+			.AddFontAwesomeIcons();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,8 +59,7 @@ namespace CholongFathersPortfolio.Server
 
 			app.UseEndpoints(endpoints =>
 			{
-				endpoints.MapRazorPages();
-				endpoints.MapControllers();
+				endpoints.MapBlazorHub();
 				endpoints.MapFallbackToFile("index.html");
 			});
 		}

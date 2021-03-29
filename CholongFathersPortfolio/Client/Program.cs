@@ -1,3 +1,6 @@
+using Blazorise;
+using Blazorise.Material;
+using Blazorise.Icons.FontAwesome;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,9 +18,20 @@ namespace CholongFathersPortfolio.Client
 		public static async Task Main(string[] args)
 		{
 			var builder = WebAssemblyHostBuilder.CreateDefault(args);
-			builder.RootComponents.Add<App>("#app");
+			builder.Services
+			  .AddBlazorise(options =>
+			  {
+				  options.ChangeTextOnKeyPress = true;
+			  })
+			  .AddMaterialProviders()
+			  .AddFontAwesomeIcons();
 
-			builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+			builder.Services.AddSingleton(new HttpClient
+			{
+				BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
+			});
+
+			builder.RootComponents.Add<App>("#app");
 
 			await builder.Build().RunAsync();
 		}
