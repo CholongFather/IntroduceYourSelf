@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Shared\CholongFathersPortfolio.Shared.csproj" />
+    <ProjectReference Include="..\..\IntroduceMySelf.DTO\IntroduceMySelf.DTO.csproj" />
   </ItemGroup>
 
   <ItemGroup>

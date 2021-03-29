@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.WebEncoders;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
+using Serilog;
 
 namespace SangWanPortfolio.Web
 {
@@ -52,6 +53,7 @@ namespace SangWanPortfolio.Web
                 app.UseExceptionHandler("/Error");
             }
 
+			app.UseSerilogRequestLogging();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 

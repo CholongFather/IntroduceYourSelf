@@ -18,6 +18,7 @@ using StackExchange.Redis.Extensions.Core.Configuration;
 
 using StackExchange.Redis.Extensions.Newtonsoft;
 using IdentityModel;
+using Serilog;
 
 namespace IntroduceMySelfAPI
 {
@@ -72,7 +73,9 @@ namespace IntroduceMySelfAPI
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "IntroduceMySelfAPI v1"));
             }
 
-            app.UseRouting();
+			app.UseSerilogRequestLogging();
+
+			app.UseRouting();
 
             app.UseCors("AllowAll");
 

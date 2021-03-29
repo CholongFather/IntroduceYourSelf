@@ -28,7 +28,7 @@ namespace CholongFathersPortfolio.Client
 
 			builder.Services.AddSingleton(new HttpClient
 			{
-				BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
+				BaseAddress = new Uri("http://localhost:8080")
 			});
 
 			builder.RootComponents.Add<App>("#app");
