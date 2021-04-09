@@ -126,15 +126,15 @@ my-app/
   node_modules/
   package.json
   public/
-    index.html
-    favicon.ico
+	index.html
+	favicon.ico
   src/
-    App.css
-    App.js
-    App.test.js
-    index.css
-    index.js
-    logo.svg
+	App.css
+	App.js
+	App.test.js
+	index.css
+	index.js
+	logo.svg
 ```
 
 For the project to build, **these files must exist with exact filenames**:
@@ -257,14 +257,14 @@ Then add the block below to your `launch.json` file and put it inside the `.vsco
 {
   "version": "0.2.0",
   "configurations": [{
-    "name": "Chrome",
-    "type": "chrome",
-    "request": "launch",
-    "url": "http://localhost:3000",
-    "webRoot": "${workspaceRoot}/src",
-    "sourceMapPathOverrides": {
-      "webpack:///src/*": "${webRoot}/*"
-    }
+	"name": "Chrome",
+	"type": "chrome",
+	"request": "launch",
+	"url": "http://localhost:3000",
+	"webRoot": "${workspaceRoot}/src",
+	"sourceMapPathOverrides": {
+	  "webpack:///src/*": "${webRoot}/*"
+	}
   }]
 }
 ```
@@ -313,15 +313,15 @@ Add the following line to `scripts` section:
 ```diff
   "scripts": {
 +   "precommit": "lint-staged",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+	"start": "react-scripts start",
+	"build": "react-scripts build",
 ```
 
 Next we add a 'lint-staged' field to the `package.json`, for example:
 
 ```diff
   "dependencies": {
-    // ...
+	// ...
   },
 + "lint-staged": {
 +   "src/**/*.{js,jsx,json,css}": [
@@ -376,7 +376,7 @@ import React, { Component } from 'react';
 
 class Button extends Component {
   render() {
-    // ...
+	// ...
   }
 }
 
@@ -392,7 +392,7 @@ import Button from './Button'; // Import a component from another file
 
 class DangerButton extends Component {
   render() {
-    return <Button color="red" />;
+	return <Button color="red" />;
   }
 }
 
@@ -433,21 +433,21 @@ import React, { Component } from 'react';
 
 class App extends Component {
   handleClick = () => {
-    import('./moduleA')
-      .then(({ moduleA }) => {
-        // Use moduleA
-      })
-      .catch(err => {
-        // Handle failure
-      });
+	import('./moduleA')
+	  .then(({ moduleA }) => {
+		// Use moduleA
+	  })
+	  .catch(err => {
+		// Handle failure
+	  });
   };
 
   render() {
-    return (
-      <div>
-        <button onClick={this.handleClick}>Load</button>
-      </div>
-    );
+	return (
+	  <div>
+		<button onClick={this.handleClick}>Load</button>
+	  </div>
+	);
   }
 }
 
@@ -482,8 +482,8 @@ import './Button.css'; // Tell Webpack that Button.js uses these styles
 
 class Button extends Component {
   render() {
-    // You can use them as regular CSS styles
-    return <div className="Button" />;
+	// You can use them as regular CSS styles
+	return <div className="Button" />;
   }
 }
 ```
@@ -517,11 +517,11 @@ becomes this:
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+	  -ms-flex-direction: row;
+		  flex-direction: row;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+	  -ms-flex-align: center;
+		  align-items: center;
 }
 ```
 
@@ -551,9 +551,9 @@ Then in `package.json`, add the following lines to `scripts`:
    "scripts": {
 +    "build-css": "node-sass-chokidar src/ -o src/",
 +    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-     "start": "react-scripts start",
-     "build": "react-scripts build",
-     "test": "react-scripts test --env=jsdom",
+	 "start": "react-scripts start",
+	 "build": "react-scripts build",
+	 "test": "react-scripts test --env=jsdom",
 ```
 
 >Note: To use a different preprocessor, replace `build-css` and `watch-css` commands according to your preprocessor’s documentation.
@@ -594,16 +594,16 @@ Then we can change `start` and `build` scripts to include the CSS preprocessor c
 
 ```diff
    "scripts": {
-     "build-css": "node-sass-chokidar src/ -o src/",
-     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+	 "build-css": "node-sass-chokidar src/ -o src/",
+	 "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
 -    "start": "react-scripts start",
 -    "build": "react-scripts build",
 +    "start-js": "react-scripts start",
 +    "start": "npm-run-all -p watch-css start-js",
 +    "build-js": "react-scripts build",
 +    "build": "npm-run-all build-css build-js",
-     "test": "react-scripts test --env=jsdom",
-     "eject": "react-scripts eject"
+	 "test": "react-scripts test --env=jsdom",
+	 "eject": "react-scripts eject"
    }
 ```
 
@@ -828,12 +828,12 @@ in the environment inside a `<form>`:
 ```jsx
 render() {
   return (
-    <div>
-      <small>You are running this application in <b>{process.env.NODE_ENV}</b> mode.</small>
-      <form>
-        <input type="hidden" defaultValue={process.env.REACT_APP_SECRET_CODE} />
-      </form>
-    </div>
+	<div>
+	  <small>You are running this application in <b>{process.env.NODE_ENV}</b> mode.</small>
+	  <form>
+		<input type="hidden" defaultValue={process.env.REACT_APP_SECRET_CODE} />
+	  </form>
+	</div>
   );
 }
 ```
@@ -846,7 +846,7 @@ When you load the app in the browser and inspect the `<input>`, you will see its
 <div>
   <small>You are running this application in <b>development</b> mode.</small>
   <form>
-    <input type="hidden" value="abcdef" />
+	<input type="hidden" value="abcdef" />
   </form>
 </div>
 ```
@@ -1037,11 +1037,11 @@ You may also specify any configuration value [`http-proxy-middleware`](https://g
 {
   // ...
   "proxy": {
-    "/api": {
-      "target": "<url>",
-      "ws": true
-      // ...
-    }
+	"/api": {
+	  "target": "<url>",
+	  "ws": true
+	  // ...
+	}
   }
   // ...
 }
@@ -1055,31 +1055,31 @@ Matches are regular expressions, so that you can use a regexp to match multiple 
 {
   // ...
   "proxy": {
-    // Matches any request starting with /api
-    "/api": {
-      "target": "<url_1>",
-      "ws": true
-      // ...
-    },
-    // Matches any request starting with /foo
-    "/foo": {
-      "target": "<url_2>",
-      "ssl": true,
-      "pathRewrite": {
-        "^/foo": "/foo/beta"
-      }
-      // ...
-    },
-    // Matches /bar/abc.html but not /bar/sub/def.html
-    "/bar/[^/]*[.]html": {
-      "target": "<url_3>",
-      // ...
-    },
-    // Matches /baz/abc.html and /baz/sub/def.html
-    "/baz/.*/.*[.]html": {
-      "target": "<url_4>"
-      // ...
-    }
+	// Matches any request starting with /api
+	"/api": {
+	  "target": "<url_1>",
+	  "ws": true
+	  // ...
+	},
+	// Matches any request starting with /foo
+	"/foo": {
+	  "target": "<url_2>",
+	  "ssl": true,
+	  "pathRewrite": {
+		"^/foo": "/foo/beta"
+	  }
+	  // ...
+	},
+	// Matches /bar/abc.html but not /bar/sub/def.html
+	"/bar/[^/]*[.]html": {
+	  "target": "<url_3>",
+	  // ...
+	},
+	// Matches /baz/abc.html and /baz/sub/def.html
+	"/baz/.*/.*[.]html": {
+	  "target": "<url_4>"
+	  // ...
+	}
   }
   // ...
 }
@@ -1101,15 +1101,15 @@ Either way, you can proxy WebSocket requests manually in `package.json`:
 {
   // ...
   "proxy": {
-    "/socket": {
-      // Your compatible WebSocket server
-      "target": "ws://<socket_url>",
-      // Tell http-proxy-middleware that this is a WebSocket proxy.
-      // Also allows you to proxy WebSocket requests without an additional HTTP request
-      // https://github.com/chimurai/http-proxy-middleware#external-websocket-upgrade
-      "ws": true
-      // ...
-    }
+	"/socket": {
+	  // Your compatible WebSocket server
+	  "target": "ws://<socket_url>",
+	  // Tell http-proxy-middleware that this is a WebSocket proxy.
+	  // Also allows you to proxy WebSocket requests without an additional HTTP request
+	  // https://github.com/chimurai/http-proxy-middleware#external-websocket-upgrade
+	  "ws": true
+	  // ...
+	}
   }
   // ...
 }
@@ -1147,8 +1147,8 @@ Since Create React App doesn’t support server rendering, you might be wonderin
 <!doctype html>
 <html lang="en">
   <head>
-    <meta property="og:title" content="__OG_TITLE__">
-    <meta property="og:description" content="__OG_DESCRIPTION__">
+	<meta property="og:title" content="__OG_TITLE__">
+	<meta property="og:description" content="__OG_DESCRIPTION__">
 ```
 
 Then, on the server, regardless of the backend you use, you can read `index.html` into memory and replace `__OG_TITLE__`, `__OG_DESCRIPTION__`, and any other placeholders with values depending on the current URL. Just make sure to sanitize and escape the interpolated values so that they are safe to embed into HTML!
@@ -1173,9 +1173,9 @@ Similarly to the previous section, you can leave some placeholders in the HTML t
 <!doctype html>
 <html lang="en">
   <head>
-    <script>
-      window.SERVER_DATA = __SERVER_DATA__;
-    </script>
+	<script>
+	  window.SERVER_DATA = __SERVER_DATA__;
+	</script>
 ```
 
 Then, on the server, you can replace `__SERVER_DATA__` with a JSON of real data right before sending the response. The client code can then read `window.SERVER_DATA` to use it. **Make sure to [sanitize the JSON before sending it to the client](https://medium.com/node-security/the-most-common-xss-vulnerability-in-react-js-applications-2bdffbcc1fa0) as it makes your app vulnerable to XSS attacks.**
@@ -1403,21 +1403,21 @@ Example package.json:
 {
   "name": "your-package",
   "jest": {
-    "collectCoverageFrom" : [
-      "src/**/*.{js,jsx}",
-      "!<rootDir>/node_modules/",
-      "!<rootDir>/path/to/dir/"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
-      }
-    },
-    "coverageReporters": ["text"],
-    "snapshotSerializers": ["my-serializer-module"]
+	"collectCoverageFrom" : [
+	  "src/**/*.{js,jsx}",
+	  "!<rootDir>/node_modules/",
+	  "!<rootDir>/path/to/dir/"
+	],
+	"coverageThreshold": {
+	  "global": {
+		"branches": 90,
+		"functions": 90,
+		"lines": 90,
+		"statements": 90
+	  }
+	},
+	"coverageReporters": ["text"],
+	"snapshotSerializers": ["my-serializer-module"]
   }
 }
 ```
@@ -1441,7 +1441,7 @@ node_js:
   - 6
 cache:
   directories:
-    - node_modules
+	- node_modules
 script:
   - npm run build
   - npm test
@@ -1488,17 +1488,17 @@ By default, the `package.json` of the generated project looks like this:
 
 ```js
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom"
+	"start": "react-scripts start",
+	"build": "react-scripts build",
+	"test": "react-scripts test --env=jsdom"
 ```
 
 If you know that none of your tests depend on [jsdom](https://github.com/tmpvar/jsdom), you can safely remove `--env=jsdom`, and your tests will run faster:
 
 ```diff
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+	"start": "react-scripts start",
+	"build": "react-scripts build",
 -   "test": "react-scripts test --env=jsdom"
 +   "test": "react-scripts test"
 ```
@@ -1591,7 +1591,7 @@ Then, add these scripts to your `package.json`:
    "scripts": {
 +    "styleguide": "styleguidist server",
 +    "styleguide:build": "styleguidist build",
-     "start": "react-scripts start",
+	 "start": "react-scripts start",
 ```
 
 Then, run the following command inside your app’s directory:
@@ -1737,9 +1737,9 @@ Then in `package.json`, add the following line to `scripts`:
 ```diff
    "scripts": {
 +    "analyze": "source-map-explorer build/static/js/main.*",
-     "start": "react-scripts start",
-     "build": "react-scripts build",
-     "test": "react-scripts test --env=jsdom",
+	 "start": "react-scripts start",
+	 "build": "react-scripts build",
+	 "test": "react-scripts test --env=jsdom",
 ```
 
 Then to analyze the bundle run the production build then run the analyze
@@ -1815,10 +1815,10 @@ This is because when there is a fresh page load for a `/todos/42`, the server lo
 If you’re using [Apache HTTP Server](https://httpd.apache.org/), you need to create a `.htaccess` file in the `public` folder that looks like this:
 
 ```
-    Options -MultiViews
-    RewriteEngine On
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.html [QSA,L]
+	Options -MultiViews
+	RewriteEngine On
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^ index.html [QSA,L]
 ```
 
 It will get copied to the `build` folder when you run `npm run build`. 
@@ -1885,56 +1885,56 @@ Install the Firebase CLI if you haven’t already by running `npm install -g fir
 Then run the `firebase init` command from your project’s root. You need to choose the **Hosting: Configure and deploy Firebase Hosting sites** and choose the Firebase project you created in the previous step. You will need to agree with `database.rules.json` being created, choose `build` as the public directory, and also agree to **Configure as a single-page app** by replying with `y`.
 
 ```sh
-    === Project Setup
+	=== Project Setup
 
-    First, let's associate this project directory with a Firebase project.
-    You can create multiple project aliases by running firebase use --add,
-    but for now we'll just set up a default project.
+	First, let's associate this project directory with a Firebase project.
+	You can create multiple project aliases by running firebase use --add,
+	but for now we'll just set up a default project.
 
-    ? What Firebase project do you want to associate as default? Example app (example-app-fd690)
+	? What Firebase project do you want to associate as default? Example app (example-app-fd690)
 
-    === Database Setup
+	=== Database Setup
 
-    Firebase Realtime Database Rules allow you to define how your data should be
-    structured and when your data can be read from and written to.
+	Firebase Realtime Database Rules allow you to define how your data should be
+	structured and when your data can be read from and written to.
 
-    ? What file should be used for Database Rules? database.rules.json
-    ✔  Database Rules for example-app-fd690 have been downloaded to database.rules.json.
-    Future modifications to database.rules.json will update Database Rules when you run
-    firebase deploy.
+	? What file should be used for Database Rules? database.rules.json
+	✔  Database Rules for example-app-fd690 have been downloaded to database.rules.json.
+	Future modifications to database.rules.json will update Database Rules when you run
+	firebase deploy.
 
-    === Hosting Setup
+	=== Hosting Setup
 
-    Your public directory is the folder (relative to your project directory) that
-    will contain Hosting assets to uploaded with firebase deploy. If you
-    have a build process for your assets, use your build's output directory.
+	Your public directory is the folder (relative to your project directory) that
+	will contain Hosting assets to uploaded with firebase deploy. If you
+	have a build process for your assets, use your build's output directory.
 
-    ? What do you want to use as your public directory? build
-    ? Configure as a single-page app (rewrite all urls to /index.html)? Yes
-    ✔  Wrote build/index.html
+	? What do you want to use as your public directory? build
+	? Configure as a single-page app (rewrite all urls to /index.html)? Yes
+	✔  Wrote build/index.html
 
-    i  Writing configuration info to firebase.json...
-    i  Writing project information to .firebaserc...
+	i  Writing configuration info to firebase.json...
+	i  Writing project information to .firebaserc...
 
-    ✔  Firebase initialization complete!
+	✔  Firebase initialization complete!
 ```
 
 Now, after you create a production build with `npm run build`, you can deploy it by running `firebase deploy`.
 
 ```sh
-    === Deploying to 'example-app-fd690'...
+	=== Deploying to 'example-app-fd690'...
 
-    i  deploying database, hosting
-    ✔  database: rules ready to deploy.
-    i  hosting: preparing build directory for upload...
-    Uploading: [==============================          ] 75%✔  hosting: build folder uploaded successfully
-    ✔  hosting: 8 files uploaded successfully
-    i  starting release process (may take several minutes)...
+	i  deploying database, hosting
+	✔  database: rules ready to deploy.
+	i  hosting: preparing build directory for upload...
+	Uploading: [==============================          ] 75%✔  hosting: build folder uploaded successfully
+	✔  hosting: 8 files uploaded successfully
+	i  starting release process (may take several minutes)...
 
-    ✔  Deploy complete!
+	✔  Deploy complete!
 
-    Project Console: https://console.firebase.google.com/project/example-app-fd690/overview
-    Hosting URL: https://example-app-fd690.firebaseapp.com
+	Project Console: https://console.firebase.google.com/project/example-app-fd690/overview
+	Hosting URL: https://example-app-fd690.firebaseapp.com
 ```
 
 For more information see [Add Firebase to your JavaScript Project](https://firebase.google.com/docs/web/setup).
@@ -1978,8 +1978,8 @@ Add the following scripts in your `package.json`:
   "scripts": {
 +   "predeploy": "npm run build",
 +   "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+	"start": "react-scripts start",
+	"build": "react-scripts build",
 ```
 
 The `predeploy` script will run automatically before `deploy` is run.
@@ -2088,11 +2088,11 @@ Now offers a zero-configuration single-command deployment. You can use `now` to 
 
 4. Run `now --name your-project-name` from within the build directory. You will see a **now.sh** URL in your output like this:
 
-    ```
-    > Ready! https://your-project-name-tpspyhtdtk.now.sh (copied to clipboard)
-    ```
+	```
+	> Ready! https://your-project-name-tpspyhtdtk.now.sh (copied to clipboard)
+	```
 
-    Paste that URL into your browser when the build is complete, and you will see your deployed app.
+	Paste that URL into your browser when the build is complete, and you will see your deployed app.
 
 Details are available in [this article.](https://zeit.co/blog/unlimited-static)
 
@@ -2107,7 +2107,7 @@ Install the Surge CLI if you haven’t already by running `npm install -g surge`
 When asked about the project path, make sure to specify the `build` folder, for example:
 
 ```sh
-       project path: /path/to/project/build
+	   project path: /path/to/project/build
 ```
 
 Note that in order to support routers that use HTML5 `pushState` API, you may want to rename the `index.html` in your build folder to `200.html` before deploying to Surge. This [ensures that every URL falls back to that file](https://surge.sh/help/adding-a-200-page-for-client-side-routing).

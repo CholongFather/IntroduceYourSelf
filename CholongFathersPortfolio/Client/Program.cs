@@ -31,7 +31,7 @@ namespace CholongFathersPortfolio.Client
 				BaseAddress = new Uri("http://localhost:8080")
 			});
 
-			builder.RootComponents.Add<App>("#app");
+			builder.RootComponents.Add<App>("app");
 
 			await builder.Build().RunAsync();
 		}

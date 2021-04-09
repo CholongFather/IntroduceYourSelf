@@ -11,10 +11,10 @@ using Serilog.Events;
 
 namespace IntroduceMySelfAPI
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
+	public class Program
+	{
+		public static void Main(string[] args)
+		{
 			Log.Logger = new LoggerConfiguration()
 				.MinimumLevel.Override("Microsoft", LogEventLevel.Information)
 				.Enrich.FromLogContext()
@@ -23,7 +23,7 @@ namespace IntroduceMySelfAPI
 
 			try
 			{
-				Log.Information("Starting web host");
+				Log.Information("Starting Introduce API Server");
 				CreateHostBuilder(args).Build().Run();
 			}
 			catch (Exception ex)
@@ -40,13 +40,13 @@ namespace IntroduceMySelfAPI
 			Host.CreateDefaultBuilder(args)
 				.UseSerilog()
 				.ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseKestrel();
-                    webBuilder.UseStartup<Startup>();
+				{
+					webBuilder.UseKestrel();
+					webBuilder.UseStartup<Startup>();
 					webBuilder.ConfigureKestrel(serverOptions =>
 					{
 						serverOptions.ListenAnyIP(8080);
 					});
 				});
-    }
+	}
 }

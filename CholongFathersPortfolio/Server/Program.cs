@@ -41,7 +41,12 @@ namespace CholongFathersPortfolio.Server
 				.UseSerilog()
 				.ConfigureWebHostDefaults(webBuilder =>
 				{
+					webBuilder.UseKestrel();
 					webBuilder.UseStartup<Startup>();
+					webBuilder.ConfigureKestrel(serverOptions =>
+					{
+						serverOptions.ListenAnyIP(7000);
+					});
 				});
 	}
 }

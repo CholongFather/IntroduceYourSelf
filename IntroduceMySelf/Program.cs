@@ -11,10 +11,10 @@ using System.Threading.Tasks;
 
 namespace SangWanPortfolio.Web
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
+	public class Program
+	{
+		public static void Main(string[] args)
+		{
 			Log.Logger = new LoggerConfiguration()
 				.MinimumLevel.Override("Microsoft", LogEventLevel.Information)
 				.Enrich.FromLogContext()
@@ -36,17 +36,17 @@ namespace SangWanPortfolio.Web
 			}
 		}
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+		public static IHostBuilder CreateHostBuilder(string[] args) =>
+			Host.CreateDefaultBuilder(args)
 				.UseSerilog()
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseKestrel();
-                    webBuilder.UseStartup<Startup>();
+				.ConfigureWebHostDefaults(webBuilder =>
+				{
+					webBuilder.UseKestrel();
+					webBuilder.UseStartup<Startup>();
 					webBuilder.ConfigureKestrel(serverOptions =>
 					{
 						serverOptions.ListenAnyIP(5000);
 					});
 				});
-    }
+	}
 }

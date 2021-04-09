@@ -35,6 +35,15 @@ namespace CholongFathersPortfolio.Server
 			})
 			.AddMaterialProviders()
 			.AddFontAwesomeIcons();
+
+			services.AddServerSideBlazor();
+			services.AddDataProtection();
+			services.AddSession(options =>
+			{
+				options.Cookie.Name = "session";
+			});
+
+			services.AddHttpContextAccessor();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,6 +68,7 @@ namespace CholongFathersPortfolio.Server
 			app.UseStaticFiles();
 
 			app.UseRouting();
+
 
 			app.UseEndpoints(endpoints =>
 			{
