@@ -1,16 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using IntroduceMySelf.DTO;
-using Newtonsoft.Json;
-using StackExchange.Redis;
-using StackExchange.Redis.Extensions.Core;
-using StackExchange.Redis.Extensions.Core.Abstractions;
-using StackExchange.Redis.Extensions.Newtonsoft;
-using StackExchange.Redis.Extensions;
+using IntroduceMySelf.API.Util;
 
 namespace IntroduceMySelfAPI.Controllers
 {
@@ -21,6 +15,7 @@ namespace IntroduceMySelfAPI.Controllers
 		private readonly ILogger<GameController> _logger;
 		private static string _baseball;
 		private static DateTime _baseballDateTime;
+		private static Dictionary<string, string> _dic = new Dictionary<string,string>();
 
 		public GameController(ILogger<GameController> logger)
 		{
@@ -97,6 +92,42 @@ namespace IntroduceMySelfAPI.Controllers
 			
 			var number = Enumerable.Range(1, 100).OrderBy(c => Guid.NewGuid()).FirstOrDefault().ToString();
 			return guess == number;
+		}
+
+
+		/// <summary>
+		/// HangMan 미완
+		/// </summary>
+		/// <param name="guess"></param>
+		/// <returns></returns>
+		[HttpGet("HangMan")]
+		public async ValueTask<string> HangMan(string guess)
+		{
+			var word = "hangman";
+
+			var ip = GetIpAddress.GetClientIp(Request);
+			if (!_dic.ContainsKey(ip))
+				_dic.Add(ip, "");
+
+			if (guess.Length != 1)
+				return "no";
+
+			if (word.Contains(guess))
+			{
+				var result = string.Empty;
+				foreach (var c in word)
+				{
+					if (guess.Equals(c))
+						result += c;
+					else
+						result += '_';
+				}
+
+				return result;
+			}
+			else
+				return "no";
+
 		}
 	}
 }
