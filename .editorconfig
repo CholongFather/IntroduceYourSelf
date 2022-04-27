@@ -6,7 +6,7 @@ roslynator_use_anonymous_function_or_method_group = anonymous_function|method_gr
 roslynator_enum_has_flag_style = method
 roslynator_object_creation_type_style = explicit|implicit|implicit_when_type_is_obvious
 
-indent_style = space
+indent_style = tab
 
 trim_trailing_whitespace = true
 
@@ -22,6 +22,9 @@ dotnet_style_parentheses_in_other_operators = never_if_unnecessary:silent
 dotnet_code_quality_unused_parameters = all:suggestion
 dotnet_style_allow_multiple_blank_lines_experimental = true:silent
 dotnet_style_allow_statement_immediately_after_block_experimental = true:silent
+tab_width = 4
+indent_size = 4
+end_of_line = crlf
 
 [*.md]
 trim_trailing_whitespace = false
@@ -221,6 +224,10 @@ dotnet_naming_style.pascal_case.required_prefix =
 dotnet_naming_style.pascal_case.required_suffix = 
 dotnet_naming_style.pascal_case.word_separator = 
 dotnet_naming_style.pascal_case.capitalization = pascal_case
+csharp_indent_labels = one_less_than_current
+
+# CS8601: 가능한 null 참조 할당입니다.
+dotnet_diagnostic.CS8601.severity = none
 
 [*.vb]
 #### 명명 스타일 ####

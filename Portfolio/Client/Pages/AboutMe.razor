@@ -1,0 +1,41 @@
+﻿@page "/about"
+
+<PageTitle>About Me</PageTitle>
+
+	<MudPaper Class="pa">
+		<MudText Align="Align.Center" Class="my-4" Typo="Typo.h3">About me</MudText>
+		<MudText Align="Align.Center"><MudChip Color="Color.Primary">나는 누구?</MudChip></MudText>
+		<MudStack Row="true" Class="my-4">
+		@if (_loading)
+		{
+			<MudPaper>
+				<MudProgressCircular Indeterminate="true"></MudProgressCircular>
+			</MudPaper>
+		}
+		else
+		{
+			@if (!string.IsNullOrWhiteSpace(aboutMeInfo.Image))
+			{
+				<MudImage Src="@aboutMeInfo.Image" Width="400" Alt="Me!" Class="rounded-lg ma-4" />
+			}
+			else
+			{
+				<MudImage Src="https://usagi-post.com/wp-content/uploads/2020/05/no-image-found-360x250-1-300x208.png" Width="400" Alt="Not Me!" Class="rounded-lg ma-4" />
+			}
+
+			@if (!string.IsNullOrWhiteSpace(aboutMeInfo.Title) || !string.IsNullOrWhiteSpace(aboutMeInfo.Body))
+			{
+				<MudStack>
+					<MudText Align="Align.Center" Class="my-4" Color="Color.Dark" Typo="Typo.h5">@aboutMeInfo.Title</MudText>
+					<MudTextField @bind-Value="aboutMeInfo.Body" Label="소개" Variant="Variant.Outlined" ReadOnly="true"></MudTextField>
+				</MudStack>
+			}
+			else
+			{
+				<MudStack>
+					<MudText Align="Align.Center" Class="my-4" Color="Color.Dark" Typo="Typo.h5">데이터가 없습니다.</MudText>
+				</MudStack>
+			}
+		}
+		</MudStack>
+	</MudPaper>

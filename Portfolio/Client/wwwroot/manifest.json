@@ -1,0 +1,21 @@
+{
+  "name": "CPH_Portfolio",
+  "short_name": "CPH_Portfolio",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#03173d",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "CPH_Portfolio_512",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "CPH_Portfolio_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
+}

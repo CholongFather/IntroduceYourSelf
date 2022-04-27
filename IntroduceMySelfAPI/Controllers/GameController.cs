@@ -98,6 +98,7 @@ public class GameController : ControllerBase
 		var word = "hangman";
 
 		var ip = GetIpAddress.GetClientIp(Request);
+
 		if (!_dic.ContainsKey(ip))
 			_dic.Add(ip, "");
 

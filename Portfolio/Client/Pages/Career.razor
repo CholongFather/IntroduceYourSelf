@@ -1,0 +1,38 @@
+﻿@page "/career"
+
+<PageTitle>Career</PageTitle>
+<MudPaper Class="pa">
+	<MudText Align="Align.Center" Class="my-4" Typo="Typo.h3">Career</MudText>
+	<MudText Align="Align.Center"><MudChip Color="Color.Secondary">이력</MudChip></MudText>
+	<MudStack Row="true" Class="my-4">
+	@if (_loading)
+	{
+		<MudPaper>
+			<MudProgressCircular></MudProgressCircular>
+		</MudPaper>
+	}
+	else
+	{
+		<MudContainer>
+			<MudTimeline TimelinePosition="TimelinePosition.Top">
+				<MudTimelineItem Size="Size.Medium"  Color="Color.Info" TimelineAlign="TimelineAlign.End">
+					<ItemOpposite>
+						<MudText Color="Color.Dark" Typo="Typo.h6">2012</MudText>
+					</ItemOpposite>
+					<ItemContent>
+						<MudPaper Elevation="0" Class="mt-n1">
+							<MudText Color="Color.Dark" Typo="Typo.h6" GutterBottom="true">MudBlazor Emerges</MudText>
+							<MudText Typo="Typo.body2">A repository pops up on Github named MudBlazor.</MudText>
+							<MudText Typo="Typo.body2">The development has already started and the most common components can be found already.</MudText>
+						</MudPaper>
+					</ItemContent>
+				</MudTimelineItem>
+			
+				<MudTimelineItem TimelineAlign="TimelineAlign.End">
+					<MudText Color="Color.Primary">2022</MudText>
+				</MudTimelineItem>
+			</MudTimeline>
+		</MudContainer>
+	}
+	</MudStack>
+</MudPaper>

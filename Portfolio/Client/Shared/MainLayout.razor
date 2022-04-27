@@ -1,0 +1,29 @@
+﻿<MudAppBar Elevation="10" Color="Color.Primary" Dense="true">
+	<MudTooltip Text="메뉴">
+		<MudIconButton Icon="@Icons.Rounded.Notes" Color="Color.Inherit" Edge="Edge.Start"
+			OnClick="@((e) => DrawerToggle())" />
+	</MudTooltip>
+	<MudDivider Vertical="true" FlexItem="true" DividerType="DividerType.Middle" Class="mx-4 my-2" />
+	 <MudButton Variant="Variant.Text" DisableElevation="true" Link="/">김남훈 <MudText Class="mx-1" Color="Color.Secondary"> PORTFOLIO.</MudText> </MudButton>
+	 <MudDivider Vertical="true" FlexItem="true" DividerType="DividerType.Middle" Class="mx-4 my-2" />
+	<MudSpacer />
+	<MudTooltip Text="GitHub">
+		<MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Link="https://github.com/CholongFather/IntroduceYourSelf" />
+	</MudTooltip>
+	<MudTooltip Text="Code Judge Profile">
+		<MudIconButton Icon="@Icons.Custom.Brands.Calculator" Color="Color.Inherit" Link="https://www.acmicpc.net/user/kms1844"></MudIconButton>
+	</MudTooltip>
+</MudAppBar>
+
+<MudDrawer @bind-Open="_drawerOpen" Elevation="25" ClipMode="DrawerClipMode.Always">
+	<NavMenu />
+</MudDrawer>
+
+<MudMainContent>
+	<MudContainer MaxWidth="MaxWidth.False" Class="mt-4">
+		@ChildContent
+		<MudScrollToTop TopOffset="400" Style="z-index:2000;">
+			<MudFab Icon="@Icons.Material.Filled.KeyboardArrowUp" Color="Color.Primary" />
+		</MudScrollToTop>
+	</MudContainer>
+</MudMainContent>
