@@ -1,4 +1,4 @@
-﻿namespace Portfolio.Client.Pages;
+﻿namespace Portfolio.Client.Pages.Me;
 
 using System.Net.Http.Json;
 

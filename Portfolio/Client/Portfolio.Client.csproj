@@ -31,6 +31,8 @@
 
   <ItemGroup>
     <Folder Include="Components\Contact\" />
+    <Folder Include="Pages\Component\" />
+    <Folder Include="Pages\Monitoring\" />
   </ItemGroup>
 
 </Project>
