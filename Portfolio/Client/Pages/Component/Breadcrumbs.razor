@@ -1,0 +1,13 @@
+﻿@page "/component/breadcrumbs"
+
+<PageTitle>BreadCrumbs</PageTitle>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudBreadcrumbs Items="_items" MaxItems="5">
+		<ItemTemplate Context="item">
+			<MudStack Row="true">
+				<MudIcon Icon=@item.Icon></MudIcon><MudLink Href="@item.Href">@item.Text</MudLink>
+			</MudStack>
+		</ItemTemplate>
+	</MudBreadcrumbs>
+</MudPaper>

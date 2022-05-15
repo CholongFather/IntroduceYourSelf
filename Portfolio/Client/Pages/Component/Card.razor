@@ -1,0 +1,26 @@
+﻿@page "/component/card"
+
+<PageTitle>Card</PageTitle>
+
+<MudCard style="width:400px;" Elevation="25">
+	<MudCardHeader>
+		<CardHeaderAvatar>
+			<MudAvatar Color="Color.Secondary">김</MudAvatar>
+		</CardHeaderAvatar>
+		<CardHeaderContent>
+			<MudText Typo="Typo.body1">김남훈</MudText>
+			<MudText Inline="true" Typo="Typo.body2"><MudIcon Icon="@Icons.Material.Filled.LocationCity"></MudIcon> 대한민국 용인시</MudText>
+		</CardHeaderContent>
+		<CardHeaderActions>
+			<MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
+		</CardHeaderActions>
+	</MudCardHeader>
+	<MudCardMedia Image="https://mblogthumb-phinf.pstatic.net/MjAxODAxMzBfNCAg/MDAxNTE3MzA2MTg4NTY5.0Kic21ISRuoTNAqvXSjiB6ze4A_ouSTfmN4zaJP1Xkcg.JekJaPov1LARrT6l3VYC1Gwq_7tnDA_KHcb7K_Dar0wg.JPEG.kiko13/IMG_4339.jpg?type=w800"></MudCardMedia>
+	<MudCardContent>
+		<MudText Typo="Typo.body2">흐음</MudText>
+	</MudCardContent>
+	<MudCardActions>
+		<MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Error" />
+		<MudIconButton Icon="@Icons.Material.Filled.Share" Color="Color.Default" />
+	</MudCardActions>
+</MudCard>
