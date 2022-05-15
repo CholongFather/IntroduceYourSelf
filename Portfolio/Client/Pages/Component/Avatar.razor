@@ -1,0 +1,26 @@
+﻿@page "/component/avatar"
+
+<PageTitle>Alert</PageTitle>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudText Typo="Typo.h4" >Rendering</MudText>
+	<MudAvatarGroup Max="@_max" Spacing="@_spacing" MaxColor="Color.Primary">
+		<MudBadge Color="Color.Success" Overlap="true" Bordered="true">
+			<MudAvatar>
+				    <MudIcon Color="Color.Dark" Icon="@Icons.Custom.Uncategorized.Radioactive" Size="Size.Large" />
+			</MudAvatar>
+		</MudBadge>
+	</MudAvatarGroup>
+</MudPaper>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudText Typo="Typo.h4" >Control</MudText>
+	<MudGrid>
+		<MudItem xs="12" sm="6">
+			<MudSlider Min="0" Max="6" Step="0" @bind-Value="@_max" Color="Color.Info">Max Avatars</MudSlider>
+		</MudItem>
+		<MudItem xs="12" sm="6">
+			<MudSlider Min="0" Max="16" Step="0" @bind-Value="@_spacing" Color="Color.Error">Spacing</MudSlider>
+		</MudItem>
+	</MudGrid>
+</MudPaper>

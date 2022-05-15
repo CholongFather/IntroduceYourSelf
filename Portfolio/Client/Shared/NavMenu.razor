@@ -1,21 +1,37 @@
 ﻿<MudNavMenu>
     <MudNavGroup Title="Hello World" Expanded="true">
-		<MudNavLink Href="/me/about" Icon="@Icons.Filled.Favorite">About Me!</MudNavLink>
-		<MudNavLink Href="/me/service" Icon="@Icons.Filled.AccountCircle">Service</MudNavLink>
-		<MudNavLink Href="/me/skills" Icon="@Icons.Custom.FileFormats.FileCode">Skills</MudNavLink>
-		<MudNavLink Href="/me/career" Icon="@Icons.Filled.Work">Career</MudNavLink>
-		<MudNavLink Href="/me/portfolio" Icon="@Icons.Filled.ContactPage">PortFolio</MudNavLink>
-		<MudNavLink Href="/me/contact" Icon="@Icons.Filled.ContactPage">Contact</MudNavLink>
+		<MudNavLink Href="/me/about" Icon="@Icons.Filled.Favorite" Class="nav-child">About Me!</MudNavLink>
+		<MudNavLink Href="/me/service" Icon="@Icons.Filled.AccountCircle" Class="nav-child">Service</MudNavLink>
+		<MudNavLink Href="/me/skills" Icon="@Icons.Custom.FileFormats.FileCode" Class="nav-child">Skills</MudNavLink>
+		<MudNavLink Href="/me/career" Icon="@Icons.Filled.Work" Class="nav-child">Career</MudNavLink>
+		<MudNavLink Href="/me/portfolio" Icon="@Icons.Filled.ContactPage" Class="nav-child">PortFolio</MudNavLink>
+		<MudNavLink Href="/me/contact" Icon="@Icons.Filled.ContactPage" Class="nav-child">Contact</MudNavLink>
 	</MudNavGroup>
 	<MudNavGroup Title="Monitoring" Expanded="false">
-		<MudNavLink Href="/monitoring/dashboard" Icon="@Icons.Filled.ContactPage">Dash Board</MudNavLink>
-		<MudNavLink Href="/monitoring/visitor" Icon="@Icons.Filled.ContactPage">Visitor</MudNavLink>
+		<MudNavLink Href="/monitoring/dashboard" Icon="@Icons.Filled.ContactPage" Class="nav-child">Dash Board</MudNavLink>
+		<MudNavLink Href="/monitoring/visitor" Icon="@Icons.Filled.ContactPage" Class="nav-child">Visitor</MudNavLink>
 	</MudNavGroup>
 	<MudNavGroup Title="Component" Expanded="false">
-		<MudNavGroup Title="Form" Expanded="false">
-			<MudNavLink Href="/component/textinput" Icon="@Icons.Filled.ContactPage">Text</MudNavLink>
+		<MudNavLink Href="/component/alert" Icon="@Icons.Filled.ContactPage" Class="nav-child">Alert</MudNavLink>
+		<MudNavLink Href="/component/avatar" Icon="@Icons.Filled.ContactPage" Class="nav-child">Avatar</MudNavLink>
+		<MudNavLink Href="/component/badge" Icon="@Icons.Filled.ContactPage" Class="nav-child">Badge</MudNavLink>
+		<MudNavLink Href="/component/breadcrumbs" Icon="@Icons.Filled.ContactPage" Class="nav-child">Breadcrumbs</MudNavLink>
+		<MudNavGroup Title="Buttons" Expanded="false" Class="nav-child">
+			<MudNavLink Href="/component/button" Icon="@Icons.Filled.ContactPage" Class="nav-child">Button</MudNavLink>
 		</MudNavGroup>
-		<MudNavLink Href="/component/table" Icon="@Icons.Filled.ContactPage">Table</MudNavLink>
-		<MudNavLink Href="/component/datagrid" Icon="@Icons.Filled.ContactPage">DataGrid</MudNavLink>
+		<MudNavLink Href="/component/card" Icon="@Icons.Filled.ContactPage" Class="nav-child">Card</MudNavLink>
+		<MudNavLink Href="/component/carousel" Icon="@Icons.Filled.ContactPage" Class="nav-child">Carousel</MudNavLink>
+		<MudNavGroup Title="Charts" Expanded="false" Class="nav-child">
+			<MudNavLink Href="/component/barchart" Icon="@Icons.Filled.ContactPage" Class="nav-child">Bar Chart</MudNavLink>
+			<MudNavLink Href="/component/donutchart" Icon="@Icons.Filled.ContactPage" Class="nav-child">Dount Chart</MudNavLink>
+			<MudNavLink Href="/component/linechart" Icon="@Icons.Filled.ContactPage" Class="nav-child">Line Chart</MudNavLink>
+			<MudNavLink Href="/component/piechart" Icon="@Icons.Filled.ContactPage" Class="nav-child">Pie Chart</MudNavLink>
+		</MudNavGroup>
+		<MudNavLink Href="/component/chips" Icon="@Icons.Filled.ContactPage" Class="nav-child">Chips</MudNavLink>
+		<MudNavLink Href="/component/chipset" Icon="@Icons.Filled.ContactPage" Class="nav-child">ChipSet</MudNavLink>
+		<MudNavGroup Title="Form" Expanded="false" Class="nav-child">
+		</MudNavGroup>
+		<MudNavLink Href="/component/table" Icon="@Icons.Filled.ContactPage" Class="nav-child">Table</MudNavLink>
+		<MudNavLink Href="/component/datagrid" Icon="@Icons.Filled.ContactPage" Class="nav-child">DataGrid</MudNavLink>
 	</MudNavGroup>
 </MudNavMenu>

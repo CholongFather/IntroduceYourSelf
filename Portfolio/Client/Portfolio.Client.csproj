@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Properties\index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="4.2.0" />
     <PackageReference Include="MediatR.Courier" Version="5.0.0" />
     <PackageReference Include="MediatR.Courier.DependencyInjection" Version="5.0.0" />
@@ -31,7 +35,6 @@
 
   <ItemGroup>
     <Folder Include="Components\Contact\" />
-    <Folder Include="Pages\Component\" />
     <Folder Include="Pages\Monitoring\" />
   </ItemGroup>
 

@@ -1,0 +1,43 @@
+﻿@page "/component/alert"
+
+<PageTitle>Alert</PageTitle>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudText Typo="Typo.h4" >Rendering</MudText>
+	<MudGrid>
+		<MudItem md="4" xs="12">
+			<MudAlert Severity="Severity.Normal" Dense="@_dense" Elevation="@_elevation" ContentAlignment="@_horizontalAlignment" Class="my-2">Default</MudAlert>
+			<MudAlert Severity="Severity.Info" Dense="@_dense" Elevation="@_elevation" ContentAlignment="@_horizontalAlignment" Class="my-2">Info</MudAlert>
+			<MudAlert Severity="Severity.Success" Dense="@_dense" Elevation="@_elevation" ContentAlignment="@_horizontalAlignment" Class="my-2">Success</MudAlert>
+			<MudAlert Severity="Severity.Warning" Dense="@_dense" Elevation="@_elevation" ContentAlignment="@_horizontalAlignment" Class="my-2">Warning</MudAlert>
+			<MudAlert Severity="Severity.Error" Dense="@_dense" Elevation="@_elevation" ContentAlignment="@_horizontalAlignment" Class="my-2">Error</MudAlert>
+		</MudItem>
+		<MudItem md="4" xs="12">
+			<MudAlert Severity="Severity.Normal" Variant="Variant.Outlined" Dense="@_dense" ContentAlignment="@_horizontalAlignment" Elevation="@_elevation" Class="my-2">Default</MudAlert>
+			<MudAlert Severity="Severity.Info" Variant="Variant.Outlined" Dense="@_dense" ContentAlignment="@_horizontalAlignment" Elevation="@_elevation" Class="my-2">Info</MudAlert>
+			<MudAlert Severity="Severity.Success" Variant="Variant.Outlined" Dense="@_dense" ContentAlignment="@_horizontalAlignment" Elevation="@_elevation" Class="my-2">Success</MudAlert>
+			<MudAlert Severity="Severity.Warning" Variant="Variant.Outlined" Dense="@_dense" ContentAlignment="@_horizontalAlignment" Elevation="@_elevation" Class="my-2">Warning</MudAlert>
+			<MudAlert Severity="Severity.Error" Variant="Variant.Outlined" Dense="@_dense" ContentAlignment="@_horizontalAlignment" Elevation="@_elevation" Class="my-2">Error</MudAlert>
+		</MudItem>
+		<MudItem md="4" xs="12">
+			<MudAlert Severity="Severity.Normal" Variant="Variant.Filled" Dense="@_dense" ContentAlignment="@_horizontalAlignment" Elevation="@_elevation" Class="my-2">Default</MudAlert>
+			<MudAlert Severity="Severity.Info" Variant="Variant.Filled" Dense="@_dense" ContentAlignment="@_horizontalAlignment" Elevation="@_elevation" Class="my-2">Info</MudAlert>
+			<MudAlert Severity="Severity.Success" Variant="Variant.Filled" Dense="@_dense" ContentAlignment="@_horizontalAlignment" Elevation="@_elevation" Class="my-2">Success</MudAlert>
+			<MudAlert Severity="Severity.Warning" Variant="Variant.Filled" Dense="@_dense" ContentAlignment="@_horizontalAlignment" Elevation="@_elevation" Class="my-2">Warning</MudAlert>
+			<MudAlert Severity="Severity.Error" Variant="Variant.Filled" Dense="@_dense" ContentAlignment="@_horizontalAlignment" Elevation="@_elevation" Class="my-2">Error</MudAlert>
+		</MudItem>
+	</MudGrid>
+</MudPaper>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudText Typo="Typo.h4" >Control</MudText>
+	<MudCheckBox @bind-Checked="_dense" Label="밀집된 Alert" Color="Color.Primary"></MudCheckBox>
+	<MudSlider @bind-Value="_elevation" Min="0" Max="24" Class="my-4">높이</MudSlider>
+	<MudSelect @bind-Value="_horizontalAlignment" Label="위치">
+		<MudSelectItem Value="HorizontalAlignment.Left">Left</MudSelectItem>
+		<MudSelectItem Value="HorizontalAlignment.Center">Center</MudSelectItem>
+		<MudSelectItem Value="HorizontalAlignment.Right">Right</MudSelectItem>
+		<MudSelectItem Value="HorizontalAlignment.Start">Start</MudSelectItem>
+		<MudSelectItem Value="HorizontalAlignment.End">End</MudSelectItem>
+	</MudSelect>
+</MudPaper>

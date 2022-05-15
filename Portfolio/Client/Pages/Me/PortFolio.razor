@@ -1,0 +1,83 @@
+﻿@page "/me/portfolio"
+
+<PageTitle>Portfolio</PageTitle>
+
+<MudPaper Elevation="25" Class="pa-4">
+	<MudGrid Justify="Justify.SpaceAround">
+		<MudStack Class="ma-4">
+			<MudText Typo="Typo.h3">김남훈</MudText>
+			<MudText Typo="Typo.h4">Backend Developer</MudText>
+		</MudStack>
+		<MudStack Class="ma-4">
+			<MudText Inline="true"><MudIcon Icon="@Icons.Filled.Cake"></MudIcon> : 1985년생</MudText>
+			<MudText Inline="true"><MudIcon Icon="@Icons.Filled.Email"></MudIcon> : kms1844@naver.com</MudText>
+		</MudStack>
+		<MudStack Class="ma-4">
+			<MudText Inline="true"><MudIcon Icon="@Icons.Custom.Brands.GitHub"></MudIcon> : Cholong Father</MudText>
+			<MudText Inline="true"><MudIcon Icon="@Icons.Custom.Brands.Calculator"></MudIcon> Boj : kms1844</MudText>
+			<MudText Inline="true"><MudIcon Icon="@Icons.Filled.Home"></MudIcon> : this</MudText>
+		</MudStack>
+	</MudGrid>
+	<MudDivider Style="padding:1px" />
+	<MudGrid Justify="Justify.Center">
+		<MudStack Class="ma-4">
+			<MudText Typo="Typo.h5" Color="Color.Primary">학력</MudText>
+			<MudDivider />
+			<MudText Typo="Typo.h6">건국대학교</MudText>
+			<MudText Typo="Typo.h6">전자공학과</MudText>
+			<MudText Typo="Typo.h6">2004~2010 (졸업)</MudText>
+		</MudStack>
+		<MudStack Class="ma-4">
+			<MudText Typo="Typo.h5" Color="Color.Primary">활동</MudText>
+			<MudDivider />
+			<MudTimeline>
+				<MudTimelineItem Color="Color.Secondary" TimelineAlign="TimelineAlign.End">
+					<ItemOpposite>
+						2004
+					</ItemOpposite>
+					<ItemContent>
+						건국대학교 입학
+					</ItemContent>
+				</MudTimelineItem>
+				<MudTimelineItem Color="Color.Secondary" TimelineAlign="TimelineAlign.End">
+					<ItemOpposite>
+						2010
+					</ItemOpposite>
+					<ItemContent>
+						건국대학교 졸업
+					</ItemContent>
+				</MudTimelineItem>
+				<MudTimelineItem Color="Color.Secondary" TimelineAlign="TimelineAlign.End">
+					<ItemOpposite>
+						2011
+					</ItemOpposite>
+					<ItemContent>
+						동네 학원 수학 선생님 (보습)
+					</ItemContent>
+				</MudTimelineItem>
+				<MudTimelineItem Color="Color.Secondary" TimelineAlign="TimelineAlign.End">
+					<ItemOpposite>
+						2012
+					</ItemOpposite>
+					<ItemContent>
+						동네 학원 수학 선생님
+					</ItemContent>
+				</MudTimelineItem>
+			</MudTimeline>
+		</MudStack>
+	</MudGrid>
+	<MudDivider Style="padding:1px" />
+	<MudStack  Class="ma-4">
+			<MudText Typo="Typo.h5" Color="Color.Primary">경력</MudText>
+			<MudDivider />
+		<MudText Typo="Typo.body1">~~~~ Title</MudText>
+		<MudText Typo="Typo.body2">~~~~ Body</MudText>
+	</MudStack>
+	<MudDivider Style="padding:1px" />
+	<MudStack  Class="ma-4">
+			<MudText Typo="Typo.h5" Color="Color.Primary">자기계발</MudText>
+			<MudDivider />
+		<MudText Typo="Typo.body1">~~~~ Title</MudText>
+		<MudText Typo="Typo.body2">~~~~ Body</MudText>
+	</MudStack>
+</MudPaper>
