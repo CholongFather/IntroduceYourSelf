@@ -112,3 +112,7 @@
 		-webkit-transform: scale(1.0)
 	}
 }
+
+.mud-select-input {
+	background-color: var(--mud-palette-surface) !important;
+}

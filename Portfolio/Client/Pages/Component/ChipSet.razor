@@ -1,0 +1,83 @@
+﻿@page "/component/chipset"
+
+<PageTitle>ChipSet</PageTitle>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudText Typo="Typo.h4" >Rendering</MudText>
+
+	<MudText Typo="Typo.h6">단일</MudText>
+	<MudGrid>
+		<MudChipSet @bind-SelectedChip="selectedMudchip" Filter="@_filter" Mandatory="@_mandatory">
+			<MudChip Size="@_size" Variant="@_variant" SelectedColor="@_selectedColor" Text="Default"></MudChip>
+			<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.Add" Color="Color.Primary" SelectedColor="@_selectedColor" Text="Primary"></MudChip>
+			<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.BackHand" Color="Color.Secondary" SelectedColor="@_selectedColor" Text="Secondary"></MudChip>
+			<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.Cable" Color="Color.Info" SelectedColor="@_selectedColor" Text="Info"></MudChip>
+			<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.Dashboard" Color="Color.Success" SelectedColor="@_selectedColor" Text="Success"></MudChip>
+			<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.Extension" Color="Color.Warning" SelectedColor="@_selectedColor" Text="Warning"></MudChip>
+			<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.FactCheck" Color="Color.Error" SelectedColor="@_selectedColor" Text="Error"></MudChip>
+			<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.Gamepad" Color="Color.Dark" SelectedColor="@_selectedColor" Text="Dark"></MudChip>
+		</MudChipSet>
+	</MudGrid>
+
+	<div class="d-flex flex-column align-center">
+	@if (selectedMudchip != null)
+	{
+		<MudText>선택된 칩 <MudText Color="@selectedMudchip.Color" Inline="true">@selectedMudchip.Text</MudText></MudText>
+	}
+	else
+	{
+		<MudText>선택된 칩 없음</MudText>
+	}
+	</div>
+
+	<MudText Typo="Typo.h6">멀티</MudText>
+	<MudGrid>
+		<MudChipSet @bind-SelectedChips="selectedMudchips" MultiSelection="true" Filter="@_filter" Mandatory="@_mandatory">
+			<MudChip Size="@_size" Variant="@_variant" SelectedColor="@_selectedColor" Text="Default"></MudChip>
+			<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.Add" Color="Color.Primary" SelectedColor="@_selectedColor" Text="Primary"></MudChip>
+			<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.BackHand" Color="Color.Secondary" SelectedColor="@_selectedColor" Text="Secondary"></MudChip>
+			<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.Cable" Color="Color.Info" SelectedColor="@_selectedColor" Text="Info"></MudChip>
+			<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.Dashboard" Color="Color.Success" SelectedColor="@_selectedColor" Text="Success"></MudChip>
+			<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.Extension" Color="Color.Warning" SelectedColor="@_selectedColor" Text="Warning"></MudChip>
+			<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.FactCheck" Color="Color.Error" SelectedColor="@_selectedColor" Text="Error"></MudChip>
+			<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.Gamepad" Color="Color.Dark" SelectedColor="@_selectedColor" Text="Dark"></MudChip>
+		</MudChipSet>
+	</MudGrid>
+
+	<div class="d-flex flex-column align-center">
+	@if (selectedMudchips != null && selectedMudchips.Length > 0)
+	{
+		<MudText>선택된 칩 @string.Join(", ", selectedMudchips.Select(chip=>chip.Text)).</MudText>
+	}
+	else
+	{
+		<MudText>선택된 칩 없음</MudText>
+	}
+	</div>
+
+</MudPaper>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudText Typo="Typo.h4" >Control</MudText>
+	<MudCheckBox @bind-Checked="_mandatory">단일 필수값</MudCheckBox>
+	<MudCheckBox @bind-Checked="_filter">체크표시</MudCheckBox>
+	<MudSelect Class="my-1" @bind-Value="_size" Variant="Variant.Outlined" Label="크기">
+		<MudSelectItem Value="Size.Small">Small</MudSelectItem>
+		<MudSelectItem Value="Size.Medium">Medium</MudSelectItem>
+		<MudSelectItem Value="Size.Large">Large</MudSelectItem>
+	</MudSelect>
+	<MudSelect Class="my-1" @bind-Value="_variant" Variant="Variant.Outlined" Label="형태">
+		<MudSelectItem Value="Variant.Filled">Filled</MudSelectItem>
+		<MudSelectItem Value="Variant.Outlined">Outlined</MudSelectItem>
+		<MudSelectItem Value="Variant.Text">Text</MudSelectItem>
+	</MudSelect>
+	<MudSelect Class="my-1" @bind-Value="_selectedColor" Variant="Variant.Outlined" Label="선택시 색">
+		<MudSelectItem Value="Color.Primary">Primary</MudSelectItem>
+		<MudSelectItem Value="Color.Secondary">Secondary</MudSelectItem>
+		<MudSelectItem Value="Color.Info">Info</MudSelectItem>
+		<MudSelectItem Value="Color.Success">Success</MudSelectItem>
+		<MudSelectItem Value="Color.Warning">Warning</MudSelectItem>
+		<MudSelectItem Value="Color.Error">Error</MudSelectItem>
+		<MudSelectItem Value="Color.Dark">Dark</MudSelectItem>
+	</MudSelect>
+</MudPaper>

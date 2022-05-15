@@ -1,0 +1,31 @@
+﻿@page "/component/chips"
+
+<PageTitle>Chips</PageTitle>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudText Typo="Typo.h4" >Rendering</MudText>
+	<MudGrid>
+		<MudChip Size="@_size" Variant="@_variant">Default</MudChip>
+		<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.Add" Color="Color.Primary">Primary</MudChip>
+		<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.BackHand" Color="Color.Secondary">Secondary</MudChip>
+		<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.Cable" Color="Color.Info">Info</MudChip>
+		<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.Dashboard" Color="Color.Success">Success</MudChip>
+		<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.Extension" Color="Color.Warning">Warning</MudChip>
+		<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.FactCheck" Color="Color.Error">Error</MudChip>
+		<MudChip Size="@_size" Variant="@_variant" Icon="@Icons.Material.Filled.Gamepad" Color="Color.Dark">Dark</MudChip>
+	</MudGrid>
+</MudPaper>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudText Typo="Typo.h4" >Control</MudText>
+	<MudSelect Class="my-1" @bind-Value="_size" Variant="Variant.Outlined" Label="크기">
+		<MudSelectItem Value="Size.Small">Small</MudSelectItem>
+		<MudSelectItem Value="Size.Medium">Medium</MudSelectItem>
+		<MudSelectItem Value="Size.Large">Large</MudSelectItem>
+	</MudSelect>
+	<MudSelect Class="my-1" @bind-Value="_variant" Variant="Variant.Outlined" Label="형태">
+		<MudSelectItem Value="Variant.Filled">Filled</MudSelectItem>
+		<MudSelectItem Value="Variant.Outlined">Outlined</MudSelectItem>
+		<MudSelectItem Value="Variant.Text">Text</MudSelectItem>
+	</MudSelect>
+</MudPaper>
