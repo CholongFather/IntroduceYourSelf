@@ -114,5 +114,16 @@
 }
 
 .mud-select-input {
+	color: var(--mud-palette-text-primary) !important;
+	background-color: var(--mud-palette-surface) !important;
+}
+
+.mud-breadcrumbs-expander {
+	color: var(--mud-palette-text-primary) !important;
+	background-color: var(--mud-palette-surface) !important;
+}
+
+input {
+	color: var(--mud-palette-text-primary) !important;
 	background-color: var(--mud-palette-surface) !important;
 }

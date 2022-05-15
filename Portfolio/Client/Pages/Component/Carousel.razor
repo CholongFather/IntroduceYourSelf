@@ -1,0 +1,83 @@
+﻿@page "/component/carousel"
+
+<PageTitle>Carousel</PageTitle>
+
+@*Keyframes by https://animate.style/*@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<style type="text/css">
+
+	.bounceIn {
+		opacity: 0;
+		animation-delay: 0.5s;
+		animation-duration: 0.5s;
+		animation-name: bounceIn;
+		animation-fill-mode: forwards;
+	}
+
+	.bounceOut {
+		animation-duration: 0.5s;
+		animation-name: bounceOut;
+		animation-fill-mode: forwards;
+	}
+
+	.backInDown {
+		opacity: 0;
+		animation-delay: 0.5s;
+		animation-duration: 0.5s;
+		animation-name: backInDown;
+		animation-fill-mode: forwards;
+	}
+
+	.backOutDown {
+		animation-duration: 0.5s;
+		animation-name: backOutDown;
+		animation-fill-mode: forwards;
+	}
+
+	.rotateIn {
+		opacity: 0;
+		animation-delay: 0.5s;
+		animation-duration: 0.5s;
+		animation-name: rotateIn;
+		animation-fill-mode: forwards;
+	}
+
+	.rotateOut {
+		animation-duration: 0.5s;
+		animation-name: rotateOut;
+		animation-fill-mode: forwards;
+	}
+</style>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudText Typo="Typo.h4" >Rendering</MudText>
+	<MudCarousel Class="mud-width-full" @ref="_carousel" ItemsSource="@_source" @bind-SelectedIndex="_selectedIndex" Style="height:200px;" ShowArrows="@_arrows" ShowBullets="@_bullets" AutoCycle="@_autocycle" AutoCycleTime="@_autoCycleTime">
+		<ItemTemplate>
+			<div class="d-flex flex-column flex-column justify-center" style="height:100%">
+				<MudIcon Class="mx-auto" Icon="@Icons.Filled.RoomService" Size="@Size.Large" />
+				<MudText Align="@Align.Center" Class="mx-auto">@context</MudText>
+			</div>
+		</ItemTemplate>
+	</MudCarousel>
+</MudPaper>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudText Typo="Typo.h4" >Control</MudText>
+	<MudSwitch @bind-Checked="@_arrows" Color="Color.Primary">Show Arrows</MudSwitch>
+	<MudSwitch @bind-Checked="@_bullets" Color="Color.Primary">Show Bullets</MudSwitch>
+	<MudSwitch @bind-Checked="@_autocycle" Color="Color.Primary">Auto Cycle</MudSwitch>
+	<MudInput Label="Cycle Time" @bind-Value="_autoCycleTime" T="TimeSpan"></MudInput>
+	<br />
+	<MudButton Class="ma-2" Variant="Variant.Filled" Color="Color.Primary" OnClick="AddAsync">추가</MudButton>
+	<MudButton Class="ma-2" Variant="Variant.Filled" Color="Color.Error" OnClick="@(async () => await DeleteAsync(_carousel.SelectedIndex))">삭제</MudButton>
+	<MudSelect @bind-Value="_selectedIndex" Label="@($"선택된 아이템 번호 (index: {_selectedIndex})")">
+	@{
+		var index = 0;
+		foreach (var item in _source)
+		{
+			<MudSelectItem Value="@index">@item</MudSelectItem>
+			index++;
+		}
+	}
+	</MudSelect>
+</MudPaper>
