@@ -1,0 +1,53 @@
+﻿@page "/component/buttongroup"
+
+<PageTitle>Button Group</PageTitle>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudText Typo="Typo.h4" Class="my-1">Rendering</MudText>
+	<MudButtonGroup Color="@_color" Size="@_size" Variant="@_variant" VerticalAlign="@_verticalAlign" OverrideStyles="@_overrideStyles">
+		<MudButton Color="Color.Primary">One</MudButton>
+		<MudButton Color="Color.Secondary">Two</MudButton>
+		<MudButton Color="Color.Success">Three</MudButton>
+	</MudButtonGroup>
+
+	<MudButtonGroup Color="@_color" Variant="@_variant" VerticalAlign="@_verticalAlign" OverrideStyles="@_overrideStyles">
+		<MudIconButton Icon="@Icons.Material.Filled.AccessAlarm"></MudIconButton>
+		<MudToggleIconButton Icon="@Icons.Material.Filled.AlarmOff" Color="@Color.Error" ToggledIcon="@Icons.Material.Filled.AlarmOn" ToggledColor="@Color.Success" />
+		<MudButton StartIcon="@Icons.Material.Filled.AlarmAdd" IconColor="Color.Warning">알람 추가</MudButton>
+	</MudButtonGroup>
+
+	<MudButtonGroup Color="@_color" Variant="@_variant" VerticalAlign="@_verticalAlign" OverrideStyles="@_overrideStyles">
+		<MudButton>@_buttonText</MudButton>
+		<MudMenu Icon="@Icons.Material.Filled.ArrowDropDown">
+			<MudMenuItem OnClick="@(args => SetButtonText(args, "답장"))">답장</MudMenuItem>
+			<MudMenuItem OnClick="@(args => SetButtonText(args, "전체 답장"))">전체 답장</MudMenuItem>
+			<MudMenuItem OnClick="@(args => SetButtonText(args, "넘겨주기"))">넘겨주기</MudMenuItem>
+			<MudMenuItem OnClick="@(args => SetButtonText(args, "답장 후 삭제"))">답장 후 삭제</MudMenuItem>
+		</MudMenu>
+	</MudButtonGroup>
+</MudPaper>
+
+<MudPaper Class="pa-4 my-4" Elevation="25">
+	<MudText Typo="Typo.h4" Class="my-2">Control</MudText>
+	<MudSwitch Color="Color.Primary" @bind-Checked=@_verticalAlign Label="수직정렬" Class="ma-1" />
+	<MudSwitch Color="Color.Primary" @bind-Checked=@_overrideStyles Label="버튼 스타일 일괄 적용" Class="ma-1" />
+	<MudSelect Class="my-1" @bind-Value="_variant" Variant="Variant.Outlined" Label="형태">
+		<MudSelectItem Value="Variant.Filled">Filled</MudSelectItem>
+		<MudSelectItem Value="Variant.Outlined">Outlined</MudSelectItem>
+		<MudSelectItem Value="Variant.Text">Text</MudSelectItem>
+	</MudSelect>
+	<MudSelect Class="my-1" @bind-Value="_size" Variant="Variant.Outlined" Label="크기">
+		<MudSelectItem Value="Size.Small">Small</MudSelectItem>
+		<MudSelectItem Value="Size.Medium">Medium</MudSelectItem>
+		<MudSelectItem Value="Size.Large">Large</MudSelectItem>
+	</MudSelect>
+	<MudSelect Class="my-1" @bind-Value="_color" Variant="Variant.Outlined" Label="색">
+		<MudSelectItem Value="Color.Primary">Primary</MudSelectItem>
+		<MudSelectItem Value="Color.Secondary">Secondary</MudSelectItem>
+		<MudSelectItem Value="Color.Info">Info</MudSelectItem>
+		<MudSelectItem Value="Color.Success">Success</MudSelectItem>
+		<MudSelectItem Value="Color.Warning">Warning</MudSelectItem>
+		<MudSelectItem Value="Color.Error">Error</MudSelectItem>
+		<MudSelectItem Value="Color.Dark">Dark</MudSelectItem>
+	</MudSelect>
+</MudPaper>

@@ -19,6 +19,7 @@ public class UtilController : ControllerBase
 	public async ValueTask<string> NameToColor(string name)
 	{
 		var hash = 0;
+
 		for (var i = 0; i < name.Length; i++)
 		{
 			hash = name[i] + ((hash << 5) - hash);
@@ -34,6 +35,5 @@ public class UtilController : ControllerBase
 
 		return color;
 	}
-
 }
 

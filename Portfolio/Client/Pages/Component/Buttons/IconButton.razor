@@ -1,0 +1,35 @@
+﻿@page "/component/iconButton"
+
+<PageTitle>Icon Button</PageTitle>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudText Typo="Typo.h4" Class="my-1">Rendering</MudText>
+	<MudIconButton Icon="@Icons.Material.Filled.Delete" Color="@_color" Size="@_size" Variant="@_variant" Disabled="@_disable" aria-label="delete"></MudIconButton>
+	<MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="@_color" Size="@_size" Variant="@_variant" Disabled="@_disable" aria-label="github"></MudIconButton>
+	<MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="@_color" Size="@_size" Variant="@_variant" Disabled="@_disable" aria-label="add to favorite"></MudIconButton>
+	<MudIconButton Icon="@Icons.Material.Filled.Share" Color="@_color" Size="@_size" Variant="@_variant" Disabled="@_disable" aria-label="share"></MudIconButton>
+</MudPaper>
+
+<MudPaper Class="pa-4 my-4" Elevation="25">
+	<MudText Typo="Typo.h4" Class="my-2">Control</MudText>
+	<MudSwitch Color="Color.Primary" @bind-Checked=@_disable Label="Disable" Class="ma-1" />
+	<MudSelect Class="my-1" @bind-Value="_variant" Variant="Variant.Outlined" Label="형태">
+		<MudSelectItem Value="Variant.Filled">Filled</MudSelectItem>
+		<MudSelectItem Value="Variant.Outlined">Outlined</MudSelectItem>
+		<MudSelectItem Value="Variant.Text">Text</MudSelectItem>
+	</MudSelect>
+	<MudSelect Class="my-1" @bind-Value="_size" Variant="Variant.Outlined" Label="크기">
+		<MudSelectItem Value="Size.Small">Small</MudSelectItem>
+		<MudSelectItem Value="Size.Medium">Medium</MudSelectItem>
+		<MudSelectItem Value="Size.Large">Large</MudSelectItem>
+	</MudSelect>
+	<MudSelect Class="my-1" @bind-Value="_color" Variant="Variant.Outlined" Label="색">
+		<MudSelectItem Value="Color.Primary">Primary</MudSelectItem>
+		<MudSelectItem Value="Color.Secondary">Secondary</MudSelectItem>
+		<MudSelectItem Value="Color.Info">Info</MudSelectItem>
+		<MudSelectItem Value="Color.Success">Success</MudSelectItem>
+		<MudSelectItem Value="Color.Warning">Warning</MudSelectItem>
+		<MudSelectItem Value="Color.Error">Error</MudSelectItem>
+		<MudSelectItem Value="Color.Dark">Dark</MudSelectItem>
+	</MudSelect>
+</MudPaper>

@@ -97,7 +97,7 @@ public class GameController : ControllerBase
 	{
 		var word = "hangman";
 
-		var ip = GetIpAddress.GetClientIp(Request);
+		var ip = GetHeaderInfos.GetClientIp(Request);
 
 		if (!_dic.ContainsKey(ip))
 			_dic.Add(ip, "");
@@ -120,7 +120,5 @@ public class GameController : ControllerBase
 		}
 		else
 			return "no";
-
 	}
 }
-

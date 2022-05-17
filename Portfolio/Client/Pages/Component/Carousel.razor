@@ -61,12 +61,12 @@
 	</MudCarousel>
 </MudPaper>
 
-<MudPaper Class="pa-4" Elevation="25">
-	<MudText Typo="Typo.h4" >Control</MudText>
+<MudPaper Class="pa-4 my-4" Elevation="25">
+	<MudText Typo="Typo.h4" Class="my-2">Control</MudText>
 	<MudSwitch @bind-Checked="@_arrows" Color="Color.Primary">Show Arrows</MudSwitch>
 	<MudSwitch @bind-Checked="@_bullets" Color="Color.Primary">Show Bullets</MudSwitch>
 	<MudSwitch @bind-Checked="@_autocycle" Color="Color.Primary">Auto Cycle</MudSwitch>
-	<MudInput Label="Cycle Time" @bind-Value="_autoCycleTime" T="TimeSpan"></MudInput>
+	<MudNumericField @bind-Value="_autoCycleTimeText" Label="Swift Per Sec" DebounceInterval="1000" OnDebounceIntervalElapsed="OnChangeCycleTime" Min="1" Max="10"></MudNumericField>
 	<br />
 	<MudButton Class="ma-2" Variant="Variant.Filled" Color="Color.Primary" OnClick="AddAsync">추가</MudButton>
 	<MudButton Class="ma-2" Variant="Variant.Filled" Color="Color.Error" OnClick="@(async () => await DeleteAsync(_carousel.SelectedIndex))">삭제</MudButton>

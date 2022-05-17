@@ -1,0 +1,23 @@
+﻿@page "/component/buttonfab"
+
+<PageTitle>Button Fab</PageTitle>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudText Typo="Typo.h4" Class="my-1">Rendering</MudText>
+	<MudFab Class="ma-1" Label="@_text" StartIcon="@Icons.Material.Filled.Delete" Size="@_size" Disabled="@_disable"></MudFab>
+	<MudFab Class="ma-1" Label="@_text" EndIcon="@Icons.Material.Filled.Send" Size="@_size" Color="Color.Primary" Disabled="@_disable"></MudFab>
+	<MudFab Class="ma-1" Label="@_text" Size="@_size" Color="Color.Secondary" Disabled="@_disable"></MudFab>
+	<MudFab Class="ma-1" Label="@_text" Color="Color.Warning" Size="@_size" Disabled="@_disable"></MudFab>
+	<MudFab Class="ma-1" Label="@_text" Color="Color.Tertiary" EndIcon="@Icons.Custom.Brands.GitHub" Size="@_size" Disabled="@_disable"></MudFab>
+</MudPaper>
+
+<MudPaper Class="pa-4 my-4" Elevation="25">
+	<MudText Typo="Typo.h4" Class="my-2">Control</MudText>
+	<MudSwitch Color="Color.Primary" @bind-Checked=@_disable Label="Disable" Class="ma-1" />
+	<MudTextField Label="버튼 텍스트" Variant="Variant.Outlined" @bind-Value="@_text"></MudTextField>
+	<MudSelect Class="my-1" @bind-Value="_size" Variant="Variant.Outlined" Label="크기">
+		<MudSelectItem Value="Size.Small">Small</MudSelectItem>
+		<MudSelectItem Value="Size.Medium">Medium</MudSelectItem>
+		<MudSelectItem Value="Size.Large">Large</MudSelectItem>
+	</MudSelect>
+</MudPaper>

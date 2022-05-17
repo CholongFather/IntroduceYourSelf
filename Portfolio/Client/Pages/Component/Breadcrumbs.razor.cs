@@ -1,10 +1,8 @@
-﻿using MudBlazor;
-
-namespace Portfolio.Client.Pages.Component;
+﻿namespace Portfolio.Client.Pages.Component;
 
 public partial class Breadcrumbs
 {
-	private List<BreadcrumbItem> _items;
+	private List<BreadcrumbItem> _items { get; set; }
 
 	protected override async Task OnInitializedAsync()
 	{

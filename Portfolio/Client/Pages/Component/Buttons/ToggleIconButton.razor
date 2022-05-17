@@ -1,0 +1,10 @@
+﻿@page "/component/toggleiconButton"
+
+<PageTitle>Toggle Icon Button</PageTitle>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudText Typo="Typo.h4" Class="my-1">Rendering</MudText>
+	<MudToggleIconButton Toggled="@_alarmOn" ToggledChanged="OnToggledChanged" Icon="@Icons.Material.Filled.AlarmOff" Color="@Color.Error" Title="Off" ToggledIcon="@Icons.Material.Filled.AlarmOn" Variant="Variant.Filled" ToggledColor="@Color.Success" ToggledTitle="On" />
+	<MudText Class="my-1">알람이 @(_alarmOn ? "켜짐" : "꺼짐")</MudText>
+	<MudText Class="my-1">@($"난 알람을 {_switchedOnCount}번 켰다. (남은 알람 해제 수: {_maxCount - _switchedOnCount})")</MudText>
+</MudPaper>

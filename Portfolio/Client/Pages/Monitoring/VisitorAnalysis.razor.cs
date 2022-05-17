@@ -1,6 +1,6 @@
-﻿namespace Portfolio.Client.Pages.Me;
+﻿namespace Portfolio.Client.Pages.Monitoring;
 
-public partial class PortFolio
+public partial class VisitorAnalysis
 {
 	[Inject]
 	public HttpClient _httpClient { get; set; }
@@ -14,5 +14,6 @@ public partial class PortFolio
 
 	private async Task GetAsync()
 	{
+
 	}
 }

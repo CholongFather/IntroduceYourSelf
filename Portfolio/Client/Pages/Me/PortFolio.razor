@@ -1,70 +1,160 @@
 ﻿@page "/me/portfolio"
 
 <PageTitle>Portfolio</PageTitle>
-
 <MudPaper Elevation="25" Class="pa-4">
-	<MudGrid Justify="Justify.SpaceAround">
-		<MudStack Class="ma-4">
-			<MudText Typo="Typo.h3">김남훈</MudText>
-			<MudText Typo="Typo.h4">Backend Developer</MudText>
-		</MudStack>
-		<MudStack Class="ma-4">
-			<MudText Inline="true"><MudIcon Icon="@Icons.Filled.Cake"></MudIcon> : 1985년생</MudText>
-			<MudText Inline="true"><MudIcon Icon="@Icons.Filled.Email"></MudIcon> : kms1844@naver.com</MudText>
-		</MudStack>
-		<MudStack Class="ma-4">
-			<MudText Inline="true"><MudIcon Icon="@Icons.Custom.Brands.GitHub"></MudIcon> : Cholong Father</MudText>
-			<MudText Inline="true"><MudIcon Icon="@Icons.Custom.Brands.Calculator"></MudIcon> Boj : kms1844</MudText>
-			<MudText Inline="true"><MudIcon Icon="@Icons.Filled.Home"></MudIcon> : this</MudText>
-		</MudStack>
+	<MudGrid Justify="Justify.FlexStart">
+		<MudItem xs="4">
+			<MudStack Class="ma-4">
+				<MudText Typo="Typo.h3">김남훈</MudText>
+				<MudText Typo="Typo.h4">Backend Developer</MudText>
+			</MudStack>
+		</MudItem>
+		<MudItem xs="4">
+			<MudStack Class="ma-4">
+				<MudText Inline="true"><MudIcon Icon="@Icons.Filled.Cake"></MudIcon> : 1985년생</MudText>
+				<MudText Inline="true"><MudIcon Icon="@Icons.Filled.Email"></MudIcon> : kms1844@naver.com</MudText>
+			</MudStack>
+		</MudItem>
+		<MudItem xs="4">
+			<MudStack Class="ma-4">
+				<MudText Inline="true"><MudIcon Icon="@Icons.Custom.Brands.GitHub"></MudIcon> : Cholong Father</MudText>
+				<MudText Inline="true"><MudIcon Icon="@Icons.Custom.Brands.Calculator"></MudIcon> Boj : kms1844</MudText>
+				<MudText Inline="true"><MudIcon Icon="@Icons.Filled.Home"></MudIcon> : this</MudText>
+			</MudStack>
+		</MudItem>
 	</MudGrid>
 	<MudDivider Style="padding:1px" />
-	<MudGrid Justify="Justify.Center">
-		<MudStack Class="ma-4">
-			<MudText Typo="Typo.h5" Color="Color.Primary">학력</MudText>
-			<MudDivider />
-			<MudText Typo="Typo.h6">건국대학교</MudText>
-			<MudText Typo="Typo.h6">전자공학과</MudText>
-			<MudText Typo="Typo.h6">2004~2010 (졸업)</MudText>
-		</MudStack>
-		<MudStack Class="ma-4">
-			<MudText Typo="Typo.h5" Color="Color.Primary">활동</MudText>
-			<MudDivider />
-			<MudTimeline>
-				<MudTimelineItem Color="Color.Secondary" TimelineAlign="TimelineAlign.End">
-					<ItemOpposite>
-						2004
-					</ItemOpposite>
-					<ItemContent>
-						건국대학교 입학
-					</ItemContent>
-				</MudTimelineItem>
-				<MudTimelineItem Color="Color.Secondary" TimelineAlign="TimelineAlign.End">
-					<ItemOpposite>
-						2010
-					</ItemOpposite>
-					<ItemContent>
-						건국대학교 졸업
-					</ItemContent>
-				</MudTimelineItem>
-				<MudTimelineItem Color="Color.Secondary" TimelineAlign="TimelineAlign.End">
-					<ItemOpposite>
-						2011
-					</ItemOpposite>
-					<ItemContent>
-						동네 학원 수학 선생님 (보습)
-					</ItemContent>
-				</MudTimelineItem>
-				<MudTimelineItem Color="Color.Secondary" TimelineAlign="TimelineAlign.End">
-					<ItemOpposite>
-						2012
-					</ItemOpposite>
-					<ItemContent>
-						동네 학원 수학 선생님
-					</ItemContent>
-				</MudTimelineItem>
-			</MudTimeline>
-		</MudStack>
+	<MudGrid Justify="Justify.FlexStart">
+		<MudItem xs=6>
+			<MudStack Class="ma-4">
+				<MudText Typo="Typo.h5" Color="Color.Primary">학력</MudText>
+				<MudDivider />
+				<MudGrid Justify="Justify.FlexStart">
+					<MudItem xs=3>
+						<MudText Typo="Typo.body1">기간</MudText>
+					</MudItem>
+					<MudItem xs=9>
+						<MudText Typo="Typo.body1">2004.03 ~ 2010.02</MudText>
+					</MudItem>
+					<MudItem xs=3>
+						<MudText Typo="Typo.body1">학교</MudText>
+					</MudItem>
+					<MudItem xs=9>
+						<MudText Typo="Typo.body1">건국대학교</MudText>
+					</MudItem>
+					<MudItem xs=3>
+						<MudText Typo="Typo.body1">학부</MudText>
+					</MudItem>
+					<MudItem xs=9>
+						<MudText Typo="Typo.body1">전자공학부</MudText>
+					</MudItem>
+				</MudGrid>
+			</MudStack>
+			<MudStack Class="ma-4">
+				<MudText Typo="Typo.h5" Color="Color.Primary">병역</MudText>
+				<MudDivider />
+				<MudGrid Justify="Justify.FlexStart">
+					<MudItem xs=3>
+						<MudText Typo="Typo.body1">기간</MudText>
+					</MudItem>
+					<MudItem xs=9>
+						<MudText Typo="Typo.body1">2005.07 ~ 2007.07</MudText>
+					</MudItem>
+					<MudItem xs=3>
+						<MudText Typo="Typo.body1">병과</MudText>
+					</MudItem>
+					<MudItem xs=9>
+						<MudText Typo="Typo.body1">보병</MudText>
+					</MudItem>
+					<MudItem xs=3>
+						<MudText Typo="Typo.body1">계급</MudText>
+					</MudItem>
+					<MudItem xs=9>
+						<MudText Typo="Typo.body1">수경</MudText>
+					</MudItem>
+				</MudGrid>
+			</MudStack>
+		</MudItem>
+		<MudItem xs=6>
+			<MudStack Class="ma-4">
+				<MudText Typo="Typo.h5" Color="Color.Primary">이력</MudText>
+				<MudDivider />
+				<MudTimeline>
+					<MudTimelineItem Color="Color.Primary" TimelineAlign="TimelineAlign.End">
+						<ItemOpposite>
+							2012.02 ~ 2015.06
+						</ItemOpposite>
+						<ItemContent>
+							온더스카이
+						</ItemContent>
+					</MudTimelineItem>
+					<MudTimelineItem Color="Color.Primary" TimelineAlign="TimelineAlign.End">
+						<ItemOpposite>
+							2015.11 ~ 2016.11
+						</ItemOpposite>
+						<ItemContent>
+							디오티스
+						</ItemContent>
+					</MudTimelineItem>
+					<MudTimelineItem Color="Color.Primary" TimelineAlign="TimelineAlign.End">
+						<ItemOpposite>
+							2016.12 ~ 2018.05
+						</ItemOpposite>
+						<ItemContent>
+							우리젠
+						</ItemContent>
+					</MudTimelineItem>
+					<MudTimelineItem Color="Color.Primary" TimelineAlign="TimelineAlign.End">
+						<ItemOpposite>
+							2018.06 ~ 2018.09
+						</ItemOpposite>
+						<ItemContent>
+							네오비전
+						</ItemContent>
+					</MudTimelineItem>
+					<MudTimelineItem Color="Color.Primary" TimelineAlign="TimelineAlign.End">
+						<ItemOpposite>
+							2018.10 ~ 2019.11
+						</ItemOpposite>
+						<ItemContent>
+							참좋은 여생사
+						</ItemContent>
+					</MudTimelineItem>
+					<MudTimelineItem Color="Color.Primary" TimelineAlign="TimelineAlign.End">
+						<ItemOpposite>
+							2019.10 ~ 2020.11
+						</ItemOpposite>
+						<ItemContent>
+							앤서스랩
+						</ItemContent>
+					</MudTimelineItem>
+					<MudTimelineItem Color="Color.Primary" TimelineAlign="TimelineAlign.End">
+						<ItemOpposite>
+							2021.03 ~ 2021.04
+						</ItemOpposite>
+						<ItemContent>
+							에프엑스기어
+						</ItemContent>
+					</MudTimelineItem>
+					<MudTimelineItem Color="Color.Primary" TimelineAlign="TimelineAlign.End">
+						<ItemOpposite>
+							2021.04 ~ 2021.07
+						</ItemOpposite>
+						<ItemContent>
+							버틀러
+						</ItemContent>
+					</MudTimelineItem>
+					<MudTimelineItem Color="Color.Primary" TimelineAlign="TimelineAlign.End">
+						<ItemOpposite>
+							2021.07
+						</ItemOpposite>
+						<ItemContent>
+							엔미디어플랫폼
+						</ItemContent>
+					</MudTimelineItem>
+				</MudTimeline>
+			</MudStack>
+		</MudItem>
 	</MudGrid>
 	<MudDivider Style="padding:1px" />
 	<MudStack  Class="ma-4">
@@ -75,7 +165,14 @@
 	</MudStack>
 	<MudDivider Style="padding:1px" />
 	<MudStack  Class="ma-4">
-			<MudText Typo="Typo.h5" Color="Color.Primary">자기계발</MudText>
+			<MudText Typo="Typo.h5" Color="Color.Primary">스킬</MudText>
+			<MudDivider />
+		<MudText Typo="Typo.body1">~~~~ Title</MudText>
+		<MudText Typo="Typo.body2">~~~~ Body</MudText>
+	</MudStack>
+	<MudDivider Style="padding:1px" />
+	<MudStack  Class="ma-4">
+			<MudText Typo="Typo.h5" Color="Color.Primary">프로젝트</MudText>
 			<MudDivider />
 		<MudText Typo="Typo.body1">~~~~ Title</MudText>
 		<MudText Typo="Typo.body2">~~~~ Body</MudText>

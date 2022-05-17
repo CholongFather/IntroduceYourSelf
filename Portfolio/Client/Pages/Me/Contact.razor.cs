@@ -6,7 +6,6 @@ public partial class Contact
 	public HttpClient _httpClient { get; set; }
 
 	private bool _loading { get; set; } = true;
-
 	private List<CareerInfo> careerInfos { get; set; }
 
 	protected override async Task OnInitializedAsync()

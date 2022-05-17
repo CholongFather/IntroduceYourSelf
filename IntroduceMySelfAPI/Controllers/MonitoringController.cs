@@ -19,9 +19,17 @@ public class MonitoringController : ControllerBase
 	/// <param name="serverName">서버 명</param>
 	/// <param name="dateTime">일자</param>
 	/// <returns>일자별 데이터</returns>
-	[HttpGet("Cpu")]
+	[HttpGet("cpu")]
 	public async ValueTask<MonitoringCpuDateModel> MonitoringCpu(string serverName, DateTime dateTime)
 	{
 		return await _redisCacheClient.GetDbFromConfiguration().GetAsync<MonitoringCpuDateModel>($"{serverName}_{dateTime.ToString("yyyyMMdd")}_CPU");
+	}
+
+	[HttpPost("visit")]
+	public async ValueTask Visitor()
+	{
+		var ip = GetHeaderInfos.GetClientIp(Request);
+
+		var userAgent = GetHeaderInfos.GetUserAgent(Request);
 	}
 }

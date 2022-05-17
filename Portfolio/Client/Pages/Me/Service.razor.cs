@@ -1,14 +1,11 @@
 ﻿namespace Portfolio.Client.Pages.Me;
 
-using MudBlazor;
-
 public partial class Service
 {
 	[Inject]
 	public HttpClient _httpClient { get; set; }
 
 	private bool _loading { get; set; } = true;
-
 	private List<ServiceInfo> serviceInfos { get; set; }
 
 	protected override async Task OnInitializedAsync()

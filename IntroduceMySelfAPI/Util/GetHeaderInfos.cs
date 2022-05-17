@@ -1,5 +1,5 @@
 namespace IntroduceMySelf.API.Util;
-public class GetIpAddress
+public static class GetHeaderInfos
 {
 	/// <summary>
 	/// Client Ip 꺼낼때 사용.
@@ -10,6 +10,7 @@ public class GetIpAddress
 	public static string GetClientIp(HttpRequest request)
 	{
 		var ip = string.Empty;
+
 		if (request.Headers["X-Forwarded-For"].Count > 0)
 		{
 			var ips = request.Headers["X-Forwarded-For"].ToString().Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(e => e.Trim()).ToArray();
@@ -24,5 +25,17 @@ public class GetIpAddress
 		ip = ip.Replace("::ffff:", "");
 
 		return ip;
+	}
+
+	public static string GetUserAgent(HttpRequest request)
+	{
+		var userAgent = string.Empty;
+
+		if (request.Headers["UserAgent"].Count > 0)
+		{
+			userAgent = request.Headers["UserAgent"].ToString();
+		}
+
+		return userAgent;
 	}
 }
