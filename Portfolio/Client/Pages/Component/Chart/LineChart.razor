@@ -1,0 +1,19 @@
+﻿@page "/component/linechart"
+
+<PageTitle>Line Chart</PageTitle>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudText Typo="Typo.h4" Class="my-1">Rendering</MudText>
+	<MudChart ChartType="ChartType.Line" ChartSeries="@_series" XAxisLabels="@_xAxisLabels" Width="100%" Height="350" ChartOptions="_chartOptions"></MudChart>
+</MudPaper>
+
+<MudPaper Class="pa-4 my-4" Elevation="25">
+	<MudText Typo="Typo.h4" Class="my-2">Control</MudText>
+	<MudButton Class="my-2" Variant="Variant.Filled" @onclick="RandomizeData">데이터 변경</MudButton>
+    <MudSelect T="InterpolationOption" ValueChanged="OnValueChanged" Label="보간">
+		<MudSelectItem Value="InterpolationOption.Straight">Straight</MudSelectItem>
+        <MudSelectItem Value="InterpolationOption.NaturalSpline">Natural Spline</MudSelectItem>
+		<MudSelectItem Value="InterpolationOption.EndSlope">End Slope</MudSelectItem>
+		<MudSelectItem Value="InterpolationOption.Periodic">Periodic</MudSelectItem>
+    </MudSelect>
+</MudPaper>

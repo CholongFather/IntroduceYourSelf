@@ -4,19 +4,19 @@
 
 <MudPaper Class="pa-4" Elevation="25">
 	<MudText Typo="Typo.h4" Class="my-1">Rendering</MudText>
-	<MudButtonGroup Color="@_color" Size="@_size" Variant="@_variant" VerticalAlign="@_verticalAlign" OverrideStyles="@_overrideStyles">
+	<MudButtonGroup Class="mb-4" Color="@_color" Size="@_size" Variant="@_variant" VerticalAlign="@_verticalAlign" OverrideStyles="@_overrideStyles">
 		<MudButton Color="Color.Primary">One</MudButton>
 		<MudButton Color="Color.Secondary">Two</MudButton>
 		<MudButton Color="Color.Success">Three</MudButton>
 	</MudButtonGroup>
 
-	<MudButtonGroup Color="@_color" Variant="@_variant" VerticalAlign="@_verticalAlign" OverrideStyles="@_overrideStyles">
+	<MudButtonGroup Color="@_color" Size="@_size" Variant="@_variant" VerticalAlign="@_verticalAlign" OverrideStyles="@_overrideStyles">
 		<MudIconButton Icon="@Icons.Material.Filled.AccessAlarm"></MudIconButton>
 		<MudToggleIconButton Icon="@Icons.Material.Filled.AlarmOff" Color="@Color.Error" ToggledIcon="@Icons.Material.Filled.AlarmOn" ToggledColor="@Color.Success" />
 		<MudButton StartIcon="@Icons.Material.Filled.AlarmAdd" IconColor="Color.Warning">알람 추가</MudButton>
 	</MudButtonGroup>
 
-	<MudButtonGroup Color="@_color" Variant="@_variant" VerticalAlign="@_verticalAlign" OverrideStyles="@_overrideStyles">
+	<MudButtonGroup Class="mb-4" Color="@_color" Size="@_size" Variant="@_variant" VerticalAlign="@_verticalAlign" OverrideStyles="@_overrideStyles">
 		<MudButton>@_buttonText</MudButton>
 		<MudMenu Icon="@Icons.Material.Filled.ArrowDropDown">
 			<MudMenuItem OnClick="@(args => SetButtonText(args, "답장"))">답장</MudMenuItem>

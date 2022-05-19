@@ -1,0 +1,16 @@
+﻿@page "/component/piechart"
+
+<PageTitle>Pie Chart</PageTitle>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudText Typo="Typo.h4" Class="my-1">Rendering</MudText>
+	<MudChart ChartType="ChartType.Pie" Width="300px" Height="300px" @bind-SelectedIndex="_selectedIndex" InputData="@_chartData" InputLabels="@_chartLabels"></MudChart>
+	<MudText Typo="Typo.h6">선택된 차트 인덱스: @_selectedIndex</MudText>
+</MudPaper>
+
+<MudPaper Class="pa-4 my-4" Elevation="25">
+	<MudText Typo="Typo.h4" Class="my-2">Control</MudText>
+	<MudButton @onclick="RandomizeData" Variant="Variant.Filled" Class="mx-4">데이터 변경</MudButton>
+	<MudButton OnClick="AddDataSize" Variant="Variant.Filled" Color="Color.Primary">범례 추가</MudButton>
+	<MudButton OnClick="RemoveDataSize" Variant="Variant.Filled" Color="Color.Secondary">범례 제거</MudButton> 
+</MudPaper>

@@ -1,0 +1,20 @@
+﻿@page "/component/barchart"
+
+<PageTitle>Bar Chart</PageTitle>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudText Typo="Typo.h4" Class="my-1">Rendering</MudText>
+	<MudChart ChartType="ChartType.Bar" ChartSeries="@_series" XAxisLabels="@_xAxisLabels" Width="100%" Height="350px">
+	<CustomGraphics>
+		<style>
+			.heavy { font: bold 20px Helvetica; }
+		</style>
+		<text x="80" y="20" class="heavy">월별 매출 데이터</text>
+	</CustomGraphics>
+</MudChart>
+</MudPaper>
+
+<MudPaper Class="pa-4 my-4" Elevation="25">
+	<MudText Typo="Typo.h4" Class="my-2">Control</MudText>
+		<MudButton Class="my-2" Variant="Variant.Filled" @onclick="RandomizeData">데이터 변경</MudButton>
+</MudPaper>
