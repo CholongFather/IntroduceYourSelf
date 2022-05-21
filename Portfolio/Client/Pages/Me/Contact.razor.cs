@@ -2,9 +2,6 @@
 
 public partial class Contact
 {
-	[Inject]
-	public HttpClient _httpClient { get; set; }
-
 	private bool _loading { get; set; } = true;
 	private List<CareerInfo> careerInfos { get; set; }
 
@@ -15,7 +12,7 @@ public partial class Contact
 
 	private async Task GetAsync()
 	{
-		careerInfos = await _httpClient.GetFromJsonAsync<List<CareerInfo>>("api/introduce/career");
+		careerInfos = await ServiceClient.GetFromJsonAsync<List<CareerInfo>>("api/introduce/career");
 
 		if (careerInfos == null || !careerInfos.Any())
 			Snackbar.Add("데이터가 없습니다.", MudBlazor.Severity.Error);

@@ -15,7 +15,7 @@ public partial class Service
 
 	private async Task GetAsync()
 	{
-		serviceInfos = await _httpClient.GetFromJsonAsync<List<ServiceInfo>>("api/introduce/serviceinfos");
+		serviceInfos = await ServiceClient.GetFromJsonAsync<List<ServiceInfo>>("api/introduce/serviceinfos");
 
 		if (serviceInfos == null || !serviceInfos.Any())
 			Snackbar.Add("데이터가 없습니다.", MudBlazor.Severity.Info);

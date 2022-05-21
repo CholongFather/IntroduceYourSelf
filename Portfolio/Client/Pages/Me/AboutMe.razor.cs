@@ -2,9 +2,6 @@
 
 public partial class AboutMe
 {
-	[Inject]
-	public HttpClient _httpClient { get; set; }
-
 	private bool _loading { get; set; } = true;
 	private AboutMeInfo aboutMeInfo { get; set; }
 
@@ -15,7 +12,7 @@ public partial class AboutMe
 
 	private async Task GetAsync()
 	{
-		aboutMeInfo = await _httpClient.GetFromJsonAsync<AboutMeInfo>("api/aboutme");
+		aboutMeInfo = await ServiceClient.GetFromJsonAsync<AboutMeInfo>("api/aboutme");
 
 		if (aboutMeInfo == null || aboutMeInfo.Image == null)
 			Snackbar.Add("데이터가 없습니다.", MudBlazor.Severity.Error);

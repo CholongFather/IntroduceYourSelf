@@ -1,0 +1,45 @@
+﻿@page "/component/dialog"
+
+<PageTitle>Dialog</PageTitle>
+
+<MudPaper Class="pa-4" Elevation="25">
+	<MudText Typo="Typo.h4" Class="my-2">Rendering</MudText>
+	<MudButton @onclick="OpenDialog" Variant="Variant.Filled" Color="Color.Primary">
+	    심플
+	</MudButton>
+</MudPaper>
+
+<MudPaper Class="pa-4 my-4" Elevation="25">
+	<MudText Typo="Typo.h4" Class="my-2">Control</MudText>
+	<MudSwitch @bind-Checked="@_closeButton" Color="Color.Primary">닫기버튼</MudSwitch>
+	<MudSwitch @bind-Checked="@_noHeader" Color="Color.Primary">노헤더</MudSwitch>
+	<MudSwitch @bind-Checked="@_disableBackDropClick" Color="Color.Primary">Disable 백드롭</MudSwitch>
+	<MudSwitch @bind-Checked="@_fullScreen" Color="Color.Primary">풀 스크린</MudSwitch>
+	<MudSwitch @bind-Checked="@_fullWidth" Color="Color.Primary">크기 적용</MudSwitch>
+	@if (_fullWidth)
+	{
+		<MudSelect Class="my-1" @bind-Value="_maxWidth" Variant="Variant.Outlined" Label="최대크기">
+			<MudSelectItem Value="MaxWidth.False">없음</MudSelectItem>
+			<MudSelectItem Value="MaxWidth.ExtraSmall">Extra Small</MudSelectItem>
+			<MudSelectItem Value="MaxWidth.Small">Small</MudSelectItem>
+			<MudSelectItem Value="MaxWidth.Medium">Medium</MudSelectItem>
+			<MudSelectItem Value="MaxWidth.Large">Large</MudSelectItem>
+			<MudSelectItem Value="MaxWidth.ExtraLarge">Extra Large</MudSelectItem>
+			<MudSelectItem Value="MaxWidth.ExtraExtraLarge">Extra Extra Large</MudSelectItem>
+		</MudSelect>
+	}
+	@if (_fullScreen == false)
+	{
+		<MudSelect Class="my-1" @bind-Value="_dialogPosition" Variant="Variant.Outlined" Label="포지션">
+			<MudSelectItem Value="DialogPosition.TopRight">상단 우</MudSelectItem>
+			<MudSelectItem Value="DialogPosition.TopCenter">상단 중</MudSelectItem>
+			<MudSelectItem Value="DialogPosition.TopLeft">상단 좌</MudSelectItem>
+			<MudSelectItem Value="DialogPosition.CenterRight">중단 우</MudSelectItem>
+			<MudSelectItem Value="DialogPosition.Center">중앙</MudSelectItem>
+			<MudSelectItem Value="DialogPosition.CenterLeft">중단 좌</MudSelectItem>
+			<MudSelectItem Value="DialogPosition.BottomRight">하단 우</MudSelectItem>
+			<MudSelectItem Value="DialogPosition.BottomCenter">하단 중</MudSelectItem>
+			<MudSelectItem Value="DialogPosition.BottomLeft">하단 좌</MudSelectItem>
+		</MudSelect>
+	}
+</MudPaper>
