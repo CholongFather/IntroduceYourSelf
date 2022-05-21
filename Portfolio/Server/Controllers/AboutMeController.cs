@@ -1,6 +1,6 @@
 using IntroduceMySelf.DTO;
+
 using Microsoft.AspNetCore.Mvc;
-using Portfolio.Shared;
 
 namespace Portfolio.Server.Controllers;
 
@@ -18,7 +18,7 @@ public class AboutMeController : ControllerBase
 	[HttpGet]
 	public async ValueTask<AboutMeInfo> Get()
 	{
-		var  client = new HttpClient();
+		var client = new HttpClient();
 
 		try
 		{

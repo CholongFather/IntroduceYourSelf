@@ -4,13 +4,13 @@
 
 <MudPaper Class="pa-4" Elevation="25">
 	<MudText Typo="Typo.h4" Class="my-2">Rendering</MudText>
-	<MudAutocomplete T="string" Label="부사 모음" CoerceValue="@_coerceValue" @bind-Value="_word" SearchFunc="@QuickFilter" Margin="@_margin" Dense="@_dense" Variant="Variant.Outlined" />
+	<MudAutocomplete T="string" Label="부사 모음" CoerceValue="@_coerceValue" @bind-Value="_word" SearchFunc="@QuickFilter" Margin="@_margin" Dense="@_isDense" Variant="Variant.Outlined" />
 </MudPaper>
 
 <MudPaper Class="pa-4 my-4" Elevation="25">
 	<MudText Typo="Typo.h4" Class="my-2">Control</MudText>
 	<MudSwitch @bind-Checked="@_coerceValue" Color="Color.Primary">목록에 없어도 사용</MudSwitch>
-	<MudSwitch @bind-Checked="@_dense" Color="Color.Primary">밀집된 List</MudSwitch>
+	<MudSwitch @bind-Checked="@_isDense" Color="Color.Primary">밀집된 List</MudSwitch>
 	<MudSelect Class="my-1" @bind-Value="_margin" Variant="Variant.Outlined" Label="Input 크기">
 		<MudSelectItem Value="Margin.None">없음</MudSelectItem>
 		<MudSelectItem Value="Margin.Dense">밀집</MudSelectItem>

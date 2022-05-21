@@ -2,14 +2,14 @@
 
 public partial class Badge
 {
-	public Origin _origin { get; set; } = Origin.TopRight;
-	public bool _dot { get; set; }
-	public bool _overlap { get; set; }
-	public bool _bordered { get; set; }
-	public string _badgeIcon { get; set; }
-	public string _selectedTestComponent { get; set; } = "Chip";
-	public string _addNumber { get; set; } = "1";
-	public int? _badgeContent { get; set; }
+	public bool _isBordered;
+	public bool _isDot;
+	public bool _isOverlap;
+	public int? _badgeContent;
+	public string _addNumber = "1";
+	public string _badgeIcon;
+	public string _selectedTestComponent = "Chip";
+	public Origin _origin = Origin.TopRight;
 
 	protected override async Task OnInitializedAsync()
 	{

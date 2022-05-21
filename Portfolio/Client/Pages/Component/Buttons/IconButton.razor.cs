@@ -2,10 +2,10 @@
 
 public partial class IconButton
 {
-	private Size _size { get; set; } = Size.Small;
-	private Variant _variant { get; set; } = Variant.Filled;
-	private bool _disable { get; set; } = false;
-	private Color _color { get; set; } = Color.Primary;
+	private bool _isDisable = false;
+	private Color _color = Color.Primary;
+	private Size _size = Size.Small;
+	private Variant _variant = Variant.Filled;
 
 	protected override async Task OnInitializedAsync()
 	{

@@ -2,7 +2,7 @@
 
 public partial class VisitorAnalysis
 {
-	private bool _loading { get; set; } = true;
+	private bool _isLoading = true;
 
 	protected override async Task OnInitializedAsync()
 	{

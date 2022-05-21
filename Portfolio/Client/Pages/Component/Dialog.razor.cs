@@ -2,13 +2,13 @@
 
 public partial class Dialog
 {
-	private MaxWidth _maxWidth { get; set; } = MaxWidth.False;
-	private bool _fullWidth { get; set; } = false;
-	private bool _closeButton { get; set; } = true;
-	private bool _noHeader { get; set; } = false;
-	private bool _disableBackDropClick { get; set; } = true;
-	private bool _fullScreen { get; set; } = false;
-	private DialogPosition _dialogPosition { get; set; } = DialogPosition.TopCenter;
+	private bool _isFullWidth = false;
+	private bool _isCloseButton = false;
+	private bool _hasHeader = false;
+	private bool _backDropClick = false;
+	private bool _isFullScreen = false;
+	private DialogPosition _dialogPosition = DialogPosition.TopCenter;
+	private MaxWidth _maxWidth = MaxWidth.False;
 
 
 	private void OpenDialog()
@@ -16,11 +16,11 @@ public partial class Dialog
 		DialogOptions options = new()
 		{
 			MaxWidth = _maxWidth,
-			FullWidth = _fullWidth,
-			CloseButton = _fullScreen ? true : _closeButton,
-			NoHeader = _noHeader,
-			DisableBackdropClick = _disableBackDropClick,
-			FullScreen = _fullScreen,
+			FullWidth = _isFullWidth,
+			CloseButton = _isFullScreen ? true : _isCloseButton,
+			NoHeader = _hasHeader,
+			DisableBackdropClick = _backDropClick,
+			FullScreen = _isFullScreen,
 			Position = _dialogPosition,
 			CloseOnEscapeKey = true,
 		};

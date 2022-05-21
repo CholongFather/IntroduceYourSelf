@@ -22,24 +22,25 @@ public class GameController : ControllerBase
 	[HttpGet("Baseball")]
 	public async ValueTask<int> Baseball(string number)
 	{
-		if (number.Length != 4)
+		if (number.Length > 4)
 			return 0;
 
 		if (string.IsNullOrWhiteSpace(_baseball))
 		{
-			var nums = Enumerable.Range(0, 9).OrderBy(c => Guid.NewGuid()).Take(4);
+			IEnumerable<int> nums = Enumerable.Range(0, 9).OrderBy(c => Guid.NewGuid()).Take(4);
 			_baseball = string.Join("", nums);
 			_baseballDateTime = DateTime.Now.AddSeconds(300);
 		}
 
 		if (_baseballDateTime < DateTime.Now)
 		{
-			var nums = Enumerable.Range(0, 9).OrderBy(c => Guid.NewGuid()).Take(4);
+			IEnumerable<int> nums = Enumerable.Range(0, 9).OrderBy(c => Guid.NewGuid()).Take(4);
 			_baseball = string.Join("", nums);
 			_baseballDateTime = DateTime.Now.AddSeconds(300);
 		}
 
 		var score = 0;
+
 		for (var i = 0; i < 4; i++)
 		{
 			if (_baseball[i] == number[i])
@@ -59,6 +60,7 @@ public class GameController : ControllerBase
 	public async ValueTask<string> Lottery()
 	{
 		var Lottery = Enumerable.Range(1, 45).OrderBy(c => Guid.NewGuid()).Take(7);
+
 		return $"Lottery : {string.Join(' ', Lottery.Take(6).OrderBy(c => c))}, Bonus : {Lottery.LastOrDefault()}";
 	}
 
@@ -83,6 +85,7 @@ public class GameController : ControllerBase
 		}
 
 		var number = Enumerable.Range(1, 100).OrderBy(c => Guid.NewGuid()).FirstOrDefault().ToString();
+
 		return guess == number;
 	}
 
@@ -108,7 +111,8 @@ public class GameController : ControllerBase
 		if (word.Contains(guess))
 		{
 			var result = string.Empty;
-			foreach (var c in word)
+
+			foreach (char c in word)
 			{
 				if (guess.Equals(c))
 					result += c;

@@ -2,8 +2,8 @@
 
 public partial class Career
 {
-	private bool _loading { get; set; } = true;
-	private List<CareerInfo> careerInfos { get; set; }
+	private bool _isLoading = true;
+	private List<CareerInfo> _careerInfos;
 
 	protected override async Task OnInitializedAsync()
 	{
@@ -12,11 +12,11 @@ public partial class Career
 
 	private async Task GetAsync()
 	{
-		careerInfos = await ServiceClient.GetFromJsonAsync<List<CareerInfo>>("api/introduce/career");
+		_careerInfos = await ServiceClient.GetFromJsonAsync<List<CareerInfo>>("api/introduce/career");
 
-		if (careerInfos == null || !careerInfos.Any())
+		if (_careerInfos == null || !_careerInfos.Any())
 			Snackbar.Add("데이터가 없습니다.", MudBlazor.Severity.Error);
 
-		_loading = false;
+		_isLoading = false;
 	}
 }

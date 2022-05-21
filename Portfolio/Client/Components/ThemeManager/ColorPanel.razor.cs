@@ -1,6 +1,3 @@
-
-using MudBlazor;
-
 namespace Portfolio.Client.Components.ThemeManager;
 
 public partial class ColorPanel

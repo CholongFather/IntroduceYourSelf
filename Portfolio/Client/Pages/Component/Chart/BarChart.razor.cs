@@ -2,12 +2,11 @@
 
 public partial class BarChart
 {
+	private int _index = -1;
+	private string[] _xAxisLabels = { "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월" };
 	private ChartOptions _chartOptions = new();
 	private List<ChartSeries> _series = new();
-
-	private string[] _xAxisLabels = { "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월" };
 	private Random _random = new();
-	private int _index = -1;
 
 	protected override async Task OnInitializedAsync()
 	{

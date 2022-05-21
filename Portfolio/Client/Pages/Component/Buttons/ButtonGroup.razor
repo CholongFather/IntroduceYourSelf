@@ -4,19 +4,19 @@
 
 <MudPaper Class="pa-4" Elevation="25">
 	<MudText Typo="Typo.h4" Class="my-1">Rendering</MudText>
-	<MudButtonGroup Class="mb-4" Color="@_color" Size="@_size" Variant="@_variant" VerticalAlign="@_verticalAlign" OverrideStyles="@_overrideStyles">
+	<MudButtonGroup Class="mb-4" Color="@_color" Size="@_size" Variant="@_variant" VerticalAlign="@_isVerticalAlign" OverrideStyles="@_isOverrideStyles">
 		<MudButton Color="Color.Primary">One</MudButton>
 		<MudButton Color="Color.Secondary">Two</MudButton>
 		<MudButton Color="Color.Success">Three</MudButton>
 	</MudButtonGroup>
 
-	<MudButtonGroup Color="@_color" Size="@_size" Variant="@_variant" VerticalAlign="@_verticalAlign" OverrideStyles="@_overrideStyles">
+	<MudButtonGroup Color="@_color" Size="@_size" Variant="@_variant" VerticalAlign="@_isVerticalAlign" OverrideStyles="@_isOverrideStyles">
 		<MudIconButton Icon="@Icons.Material.Filled.AccessAlarm"></MudIconButton>
 		<MudToggleIconButton Icon="@Icons.Material.Filled.AlarmOff" Color="@Color.Error" ToggledIcon="@Icons.Material.Filled.AlarmOn" ToggledColor="@Color.Success" />
 		<MudButton StartIcon="@Icons.Material.Filled.AlarmAdd" IconColor="Color.Warning">알람 추가</MudButton>
 	</MudButtonGroup>
 
-	<MudButtonGroup Class="mb-4" Color="@_color" Size="@_size" Variant="@_variant" VerticalAlign="@_verticalAlign" OverrideStyles="@_overrideStyles">
+	<MudButtonGroup Class="mb-4" Color="@_color" Size="@_size" Variant="@_variant" VerticalAlign="@_isVerticalAlign" OverrideStyles="@_isOverrideStyles">
 		<MudButton>@_buttonText</MudButton>
 		<MudMenu Icon="@Icons.Material.Filled.ArrowDropDown">
 			<MudMenuItem OnClick="@(args => SetButtonText(args, "답장"))">답장</MudMenuItem>
@@ -29,8 +29,8 @@
 
 <MudPaper Class="pa-4 my-4" Elevation="25">
 	<MudText Typo="Typo.h4" Class="my-2">Control</MudText>
-	<MudSwitch Color="Color.Primary" @bind-Checked=@_verticalAlign Label="수직정렬" Class="ma-1" />
-	<MudSwitch Color="Color.Primary" @bind-Checked=@_overrideStyles Label="버튼 스타일 일괄 적용" Class="ma-1" />
+	<MudSwitch Color="Color.Primary" @bind-Checked=@_isVerticalAlign Label="수직정렬" Class="ma-1" />
+	<MudSwitch Color="Color.Primary" @bind-Checked=@_isOverrideStyles Label="버튼 스타일 일괄 적용" Class="ma-1" />
 	<MudSelect Class="my-1" @bind-Value="_variant" Variant="Variant.Outlined" Label="형태">
 		<MudSelectItem Value="Variant.Filled">Filled</MudSelectItem>
 		<MudSelectItem Value="Variant.Outlined">Outlined</MudSelectItem>

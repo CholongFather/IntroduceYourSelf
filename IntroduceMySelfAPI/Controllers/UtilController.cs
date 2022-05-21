@@ -30,6 +30,7 @@ public class UtilController : ControllerBase
 		for (var i = 0; i < 3; i++)
 		{
 			var value = (hash >> (i * 8)) & 0xFF;
+
 			color += value.ToString("X2");
 		}
 

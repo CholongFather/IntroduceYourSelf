@@ -1,14 +1,13 @@
-﻿
-using MudBlazor;
-
-namespace Portfolio.Client.Shared;
+﻿namespace Portfolio.Client.Shared;
 
 public partial class MainLayout
 {
 	[Parameter]
 	public RenderFragment ChildContent { get; set; } = default!;
+
 	[Parameter]
 	public EventCallback OnDarkModeToggle { get; set; }
+
 	[Parameter]
 	public EventCallback<bool> OnRightToLeftToggle { get; set; }
 
@@ -21,7 +20,8 @@ public partial class MainLayout
 
 	private async Task RightToLeftToggle()
 	{
-		bool isRtl = await ClientPreferences.ToggleLayoutDirectionAsync();
+		var isRtl = await ClientPreferences.ToggleLayoutDirectionAsync();
+
 		_rightToLeft = isRtl;
 
 		await OnRightToLeftToggle.InvokeAsync(isRtl);

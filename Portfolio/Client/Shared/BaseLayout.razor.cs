@@ -1,26 +1,28 @@
-﻿using MudBlazor;
-
-using Portfolio.Client.Theme;
+﻿using Portfolio.Client.Theme;
 
 namespace Portfolio.Client.Shared;
 
 public partial class BaseLayout
 {
-	private ClientPreference? _themePreference;
-	private MudTheme _currentTheme = new LightTheme();
 	private bool _themeDrawerOpen = false;
 	private bool _rightToLeft;
+	private ClientPreference? _themePreference;
+	private MudTheme _currentTheme = new LightTheme();
 
 	protected override async Task OnInitializedAsync()
 	{
 		_themePreference = await ClientPreferences.GetPreference() as ClientPreference;
-		if (_themePreference == null) _themePreference = new ClientPreference();
+
+		if (_themePreference == null)
+			_themePreference = new ClientPreference();
+
 		SetCurrentTheme(_themePreference);
 	}
 
 	private async Task ThemePreferenceChanged(ClientPreference themePreference)
 	{
 		SetCurrentTheme(themePreference);
+
 		await ClientPreferences.SetPreference(themePreference);
 	}
 

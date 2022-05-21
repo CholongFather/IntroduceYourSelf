@@ -1,17 +1,15 @@
-﻿using MudBlazor;
-
-namespace Portfolio.Client.Pages.Component;
+﻿namespace Portfolio.Client.Pages.Component;
 
 public partial class Carousel
 {
-	private MudCarousel<string> _carousel { get; set; }
-	private bool _arrows { get; set; } = true;
-	private bool _bullets { get; set; } = true;
-	private bool _autocycle { get; set; }= true;
-	private IList<string> _source { get; set; } = new List<string>() { "1", "2", "3", "4", "5" };
-	private int _selectedIndex { get; set; } = 2;
-	private int _autoCycleTimeText { get; set; } = 5;
-	private TimeSpan _autoCycleTime { get; set; } = new TimeSpan(0,0,0,5,0);
+	private bool _arrows = false;
+	private bool _bullets = false;
+	private bool _autocycle = false;
+	private int _selectedIndex = 2;
+	private int _autoCycleTimeText = 5;
+	private IList<string> _source = new List<string>() { "1", "2", "3", "4", "5" };
+	private MudCarousel<string> _carousel;
+	private TimeSpan _autoCycleTime = new TimeSpan(0, 0, 0, 5, 0);
 
 	protected override async Task OnInitializedAsync()
 	{
@@ -40,9 +38,9 @@ public partial class Carousel
 
 	private async Task OnChangeCycleTime(string cycleTime)
 	{
-		var second = Convert.ToInt32(cycleTime);
+		int second = Convert.ToInt32(cycleTime);
 
 		_autoCycleTimeText = second;
-		_autoCycleTime = new TimeSpan(0,0,0, second, 0);
+		_autoCycleTime = new TimeSpan(0, 0, 0, second, 0);
 	}
 }

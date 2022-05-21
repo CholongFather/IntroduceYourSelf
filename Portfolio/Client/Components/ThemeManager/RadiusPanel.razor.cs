@@ -13,13 +13,16 @@ public partial class RadiusPanel
 
 	protected override async Task OnInitializedAsync()
 	{
-		if (await ClientPreferences.GetPreference() is not ClientPreference themePreference) themePreference = new ClientPreference();
+		if (await ClientPreferences.GetPreference() is not ClientPreference themePreference)
+			themePreference = new ClientPreference();
+
 		Radius = themePreference.BorderRadius;
 	}
 
 	private async Task ChangedSelection(ChangeEventArgs args)
 	{
 		Radius = int.Parse(args?.Value?.ToString() ?? "0");
+
 		await OnSliderChanged.InvokeAsync(Radius);
 	}
 }

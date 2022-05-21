@@ -1,19 +1,19 @@
 <MudExpansionPanel HideIcon="true">
-    <TitleContent>
-        <div class="d-flex">
-            <MudText Class="mt-1">테이블 커스터마이징</MudText>
-            <MudAvatar Color="Color.Primary" Class="d-flex ml-auto"
-                style="width: 30px;height:30px;font-size:small!important">T
-            </MudAvatar>
-        </div>
-    </TitleContent>
-    <ChildContent>
-        <MudSwitch T="bool" Label="밀집된" Color="Color.Info" @oninput="@ToggleDenseSwitch" @bind-Checked="@IsDense" />
-        <MudSwitch T=" bool" Label="줄무늬" Color="Color.Info" @oninput="@ToggleStripedSwitch"
-            @bind-Checked="@IsStriped" />
-        <MudSwitch T="bool" Label="경계선" Color="Color.Info" @oninput="@ToggleBorderedSwitch"
-            @bind-Checked="@HasBorder" />
-        <MudSwitch T="bool" Label="떠있는" Color="Color.Info" @oninput="@ToggleHoverableSwitch"
-            @bind-Checked="@IsHoverable" />
-    </ChildContent>
+	<TitleContent>
+		<div class="d-flex">
+			<MudText Class="mt-1">테이블 커스터마이징</MudText>
+			<MudAvatar Color="Color.Primary" Class="d-flex ml-auto"
+				style="width: 30px;height:30px;font-size:small!important">T
+			</MudAvatar>
+		</div>
+	</TitleContent>
+	<ChildContent>
+		<MudSwitch T="bool" Label="밀집된" Color="Color.Info" @oninput="@ToggleDenseSwitch" @bind-Checked="@IsDense" />
+		<MudSwitch T=" bool" Label="줄무늬" Color="Color.Info" @oninput="@ToggleStripedSwitch"
+			@bind-Checked="@IsStriped" />
+		<MudSwitch T="bool" Label="경계선" Color="Color.Info" @oninput="@ToggleBorderedSwitch"
+			@bind-Checked="@HasBorder" />
+		<MudSwitch T="bool" Label="떠있는" Color="Color.Info" @oninput="@ToggleHoverableSwitch"
+			@bind-Checked="@IsHoverable" />
+	</ChildContent>
 </MudExpansionPanel>

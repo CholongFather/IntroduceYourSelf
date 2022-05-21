@@ -2,8 +2,6 @@ using IntroduceMySelf.DTO;
 
 using Microsoft.AspNetCore.Mvc;
 
-using Portfolio.Shared;
-
 namespace Portfolio.Server.Controllers
 {
 	[ApiController]
@@ -23,7 +21,7 @@ namespace Portfolio.Server.Controllers
 			HttpClient client = new HttpClient();
 			try
 			{
-				var serviceInfos = await client.GetFromJsonAsync<List<ServiceInfo>>("http://localhost:8080/IntroduceMySelf/Introduce");
+				List<ServiceInfo>? serviceInfos = await client.GetFromJsonAsync<List<ServiceInfo>>("http://localhost:8080/IntroduceMySelf/Introduce");
 
 				if (serviceInfos == null)
 					return new();

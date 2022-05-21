@@ -10,10 +10,10 @@
 <MudPaper Class="pa-4 my-4" Elevation="25">
 	<MudText Typo="Typo.h4" Class="my-2">Control</MudText>
 	<MudButton Class="my-2" Variant="Variant.Filled" @onclick="RandomizeData">데이터 변경</MudButton>
-    <MudSelect T="InterpolationOption" ValueChanged="OnValueChanged" Label="보간">
+	<MudSelect T="InterpolationOption" ValueChanged="OnValueChanged" Label="보간">
 		<MudSelectItem Value="InterpolationOption.Straight">Straight</MudSelectItem>
-        <MudSelectItem Value="InterpolationOption.NaturalSpline">Natural Spline</MudSelectItem>
+		<MudSelectItem Value="InterpolationOption.NaturalSpline">Natural Spline</MudSelectItem>
 		<MudSelectItem Value="InterpolationOption.EndSlope">End Slope</MudSelectItem>
 		<MudSelectItem Value="InterpolationOption.Periodic">Periodic</MudSelectItem>
-    </MudSelect>
+	</MudSelect>
 </MudPaper>

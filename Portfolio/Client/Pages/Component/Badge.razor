@@ -19,7 +19,7 @@
 			</MudPaper>
 		</MudItem>
 		<MudItem md="6" Class="d-flex align-center justify-center my-auto">
-			<MudBadge Origin="@_origin" Content="@_badgeContent" Color="Color.Primary" Overlap="@_overlap" Dot="@_dot" Bordered="@_bordered" Icon="@_badgeIcon">
+			<MudBadge Origin="@_origin" Content="@_badgeContent" Color="Color.Primary" Overlap="@_isOverlap" Dot="@_isDot" Bordered="@_isBordered" Icon="@_badgeIcon">
 				@if (_selectedTestComponent == "Icon")
 				{
 					<MudIcon Icon="@Icons.Custom.Brands.StackOverflow" Color="Color.Default" Size="Size.Large" />
@@ -62,9 +62,9 @@
 					<MudSelectItem Value="Origin.BottomCenter">하단 중</MudSelectItem>
 					<MudSelectItem Value="Origin.BottomRight">하단 우</MudSelectItem>
 				</MudSelect>
-				<MudCheckBox @bind-Checked="@_dot" Label="점" Color="Color.Primary" Style="width:100%;" />
-				<MudCheckBox @bind-Checked="@_overlap" Label="오버랩" Color="Color.Primary" Style="width:100%;" />
-				<MudCheckBox @bind-Checked="@_bordered" Label="테두리" Color="Color.Primary" Style="width:100%;" />
+				<MudCheckBox @bind-Checked="@_isDot" Label="점" Color="Color.Primary" Style="width:100%;" />
+				<MudCheckBox @bind-Checked="@_isOverlap" Label="오버랩" Color="Color.Primary" Style="width:100%;" />
+				<MudCheckBox @bind-Checked="@_isBordered" Label="테두리" Color="Color.Primary" Style="width:100%;" />
 				<MudCheckBox T="bool" CheckedChanged="AddIcon" Label="아이콘" Color="Color.Primary" Style="width:100%;" />
 				<MudText Typo="Typo.subtitle2" Class="my-2">뱃지 내용</MudText>
 				<div style="display: flex;">

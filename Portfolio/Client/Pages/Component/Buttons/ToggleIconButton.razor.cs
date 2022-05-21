@@ -2,9 +2,9 @@
 
 public partial class ToggleIconButton
 {
-	private bool _alarmOn { get; set; }
-	private int _switchedOnCount { get; set; }
-	private int _maxCount { get; init; } = 5;
+	private bool _isAlarmOn;
+	private int _switchedOnCount;
+	private const int _maxCount = 5;
 
 	protected override async Task OnInitializedAsync()
 	{
@@ -12,14 +12,14 @@ public partial class ToggleIconButton
 
 	private async Task OnToggledChanged(bool toggled)
 	{
-		_alarmOn = toggled;
+		_isAlarmOn = toggled;
 
-		if (_alarmOn)
+		if (_isAlarmOn)
 		{
 			if (_switchedOnCount < _maxCount)
 				_switchedOnCount++;
 			else
-				_alarmOn = false;
+				_isAlarmOn = false;
 		}
 	}
 }

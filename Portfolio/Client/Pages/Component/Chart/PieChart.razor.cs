@@ -2,12 +2,12 @@
 
 public partial class PieChart
 {
+	public double[] _chartData;
 	private int _selectedIndex = -1;
 	private int _dataSize = 4;
-	public double[] _chartData;
 	public string[] _chartLabels = { "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월" };
+	private Random random = new();
 
-	Random random = new();
 
 	protected override async Task OnInitializedAsync()
 	{

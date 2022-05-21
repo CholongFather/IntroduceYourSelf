@@ -2,10 +2,10 @@
 
 <PageTitle>Service</PageTitle>
 <MudPaper Class="pa">
-	<MudText Align="Align.Center" Class="my-4" Typo="Typo.h3">Service</MudText>
+	<MudText Class="my-4" Align="Align.Center" Typo="Typo.h3">Service</MudText>
 	<MudText Align="Align.Center"><MudChip Color="Color.Secondary">나는 어떤일을 하나?</MudChip></MudText>
-	<MudStack Row="true" Class="my-4">
-	@if (_loading)
+	<MudStack Class="my-4" Row="true">
+	@if (_isLoading)
 	{
 		<MudPaper>
 			<MudProgressCircular Indeterminate="true"></MudProgressCircular>
@@ -13,7 +13,7 @@
 	}
 	else
 	{
-		@foreach (var serviceInfo in serviceInfos)
+		@foreach (var serviceInfo in _serviceInfos)
 		{
 			<MudPaper Class="ma-4">
 				<MudStack AlignItems="AlignItems.Center">

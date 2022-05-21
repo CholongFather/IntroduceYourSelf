@@ -2,11 +2,8 @@
 
 public partial class Service
 {
-	[Inject]
-	public HttpClient _httpClient { get; set; }
-
-	private bool _loading { get; set; } = true;
-	private List<ServiceInfo> serviceInfos { get; set; }
+	private bool _isLoading = true;
+	private List<ServiceInfo> _serviceInfos;
 
 	protected override async Task OnInitializedAsync()
 	{
@@ -15,13 +12,13 @@ public partial class Service
 
 	private async Task GetAsync()
 	{
-		serviceInfos = await ServiceClient.GetFromJsonAsync<List<ServiceInfo>>("api/introduce/serviceinfos");
+		_serviceInfos = await ServiceClient.GetFromJsonAsync<List<ServiceInfo>>("api/introduce/serviceinfos");
 
-		if (serviceInfos == null || !serviceInfos.Any())
+		if (_serviceInfos == null || !_serviceInfos.Any())
 			Snackbar.Add("데이터가 없습니다.", MudBlazor.Severity.Info);
 		else
 		{
-			foreach (var serviceInfo in serviceInfos)
+			foreach (ServiceInfo? serviceInfo in _serviceInfos)
 			{
 				switch (serviceInfo.Icon)
 				{
@@ -33,6 +30,6 @@ public partial class Service
 			}
 		}
 
-		_loading = false;
+		_isLoading = false;
 	}
 }

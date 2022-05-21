@@ -1,6 +1,4 @@
-﻿using MudBlazor;
-
-namespace Portfolio.Client.Pages.Component;
+﻿namespace Portfolio.Client.Pages.Component;
 
 public partial class Card
 {

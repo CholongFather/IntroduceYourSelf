@@ -10,7 +10,7 @@
 			<MudItem xs=12>
 				<MudText Align="Align.Center"><MudChip Color="Color.Primary">나는 누구?</MudChip></MudText>
 			</MudItem>
-			@if (_loading)
+			@if (_isLoading)
 			{
 				<MudItem>
 					<MudProgressCircular Indeterminate="true"></MudProgressCircular>
@@ -19,9 +19,9 @@
 			else
 			{
 				<MudItem xs=3>
-				@if (!string.IsNullOrWhiteSpace(aboutMeInfo.Image))
+				@if (!string.IsNullOrWhiteSpace(_aboutMeInfo.Image))
 				{
-					<MudImage Src="@aboutMeInfo.Image" Alt="Me!" Class="rounded-lg ma-4" />
+					<MudImage Src="@_aboutMeInfo.Image" Alt="Me!" Class="rounded-lg ma-4" />
 				}
 				else
 				{
@@ -30,11 +30,11 @@
 				</MudItem>
 
 				<MudItem xs=3>
-				@if (!string.IsNullOrWhiteSpace(aboutMeInfo.Title) || !string.IsNullOrWhiteSpace(aboutMeInfo.Body))
+				@if (!string.IsNullOrWhiteSpace(_aboutMeInfo.Title) || !string.IsNullOrWhiteSpace(_aboutMeInfo.Body))
 				{
 					<MudStack>
-						<MudText Align="Align.Center" Class="my-4" Color="Color.Dark" Typo="Typo.h5">@aboutMeInfo.Title</MudText>
-						<MudTextField @bind-Value="aboutMeInfo.Body" Label="소개" Variant="Variant.Outlined" ReadOnly="true"></MudTextField>
+						<MudText Align="Align.Center" Class="my-4" Color="Color.Dark" Typo="Typo.h5">@_aboutMeInfo.Title</MudText>
+						<MudTextField @bind-Value="_aboutMeInfo.Body" Label="소개" Variant="Variant.Outlined" ReadOnly="true"></MudTextField>
 					</MudStack>
 				}
 				else

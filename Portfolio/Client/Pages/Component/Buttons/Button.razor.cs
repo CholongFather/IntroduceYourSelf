@@ -2,11 +2,10 @@
 
 public partial class Button
 {
-	private Size _size { get; set; } = Size.Small;
-	private Variant _variant { get; set; } = Variant.Filled;
-	private int _elevation { get; set; } = 1;
-	private bool _disable { get; set; } = false;
-	private bool _fullWidth { get; set; } = false;
+	private bool _isDisable = false;
+	private bool _isFullWidth = false;
+	private Size _size = Size.Small;
+	private Variant _variant = Variant.Filled;
 
 	protected override async Task OnInitializedAsync()
 	{

@@ -25,6 +25,7 @@ public partial class ThemeDrawer
 		if (ThemePreference is not null)
 		{
 			ThemePreference.PrimaryColor = color;
+
 			await ThemePreferenceChanged.InvokeAsync(ThemePreference);
 		}
 	}
@@ -34,6 +35,7 @@ public partial class ThemeDrawer
 		if (ThemePreference is not null)
 		{
 			ThemePreference.SecondaryColor = color;
+
 			await ThemePreferenceChanged.InvokeAsync(ThemePreference);
 		}
 	}
@@ -43,6 +45,7 @@ public partial class ThemeDrawer
 		if (ThemePreference is not null)
 		{
 			ThemePreference.BorderRadius = radius;
+
 			await ThemePreferenceChanged.InvokeAsync(ThemePreference);
 		}
 	}
@@ -52,6 +55,7 @@ public partial class ThemeDrawer
 		if (ThemePreference is not null)
 		{
 			ThemePreference.IsDarkMode = isDarkMode;
+
 			await ThemePreferenceChanged.InvokeAsync(ThemePreference);
 		}
 	}

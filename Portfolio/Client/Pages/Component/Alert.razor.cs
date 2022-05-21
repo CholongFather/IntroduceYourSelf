@@ -2,9 +2,9 @@
 
 public partial class Alert
 {
-	private int _elevation { get; set; } = 1;
-	private bool _dense { get; set; } = false;
-	private HorizontalAlignment _horizontalAlignment { get; set; } = HorizontalAlignment.Left;
+	private bool _isDense = false;
+	private int _elevation = 1;
+	private HorizontalAlignment _horizontalAlignment = HorizontalAlignment.Left;
 
 	protected override async Task OnInitializedAsync()
 	{

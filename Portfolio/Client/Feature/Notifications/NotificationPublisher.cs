@@ -15,6 +15,7 @@ public class NotificationPublisher : INotificationPublisher
 	public Task PublishAsync(INotificationMessage notification)
 	{
 		_logger.LogInformation("Publishing Notification : {notification}", notification.GetType().Name);
+
 		return _mediator.Publish(CreateNotificationWrapper(notification));
 	}
 

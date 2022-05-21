@@ -2,13 +2,12 @@
 
 public partial class ButtonGroup
 {
-	private Size _size { get; set; } = Size.Small;
-	private Variant _variant { get; set; } = Variant.Filled;
-	private bool _disable { get; set; } = false;
-	private Color _color { get; set; } = Color.Primary;
-	private bool _verticalAlign { get; set; } = false;
-	private string _buttonText { get; set; } = "메뉴";
-	private bool _overrideStyles { get; set; } = false;
+	private bool _isVerticalAlign = false;
+	private bool _isOverrideStyles = false;
+	private string _buttonText = "메뉴";
+	private Color _color = Color.Primary;
+	private Size _size = Size.Small;
+	private Variant _variant = Variant.Filled;
 
 	protected override async Task OnInitializedAsync()
 	{

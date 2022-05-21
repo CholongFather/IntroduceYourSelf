@@ -2,8 +2,8 @@
 
 public partial class AboutMe
 {
-	private bool _loading { get; set; } = true;
-	private AboutMeInfo aboutMeInfo { get; set; }
+	private bool _isLoading = true;
+	private AboutMeInfo _aboutMeInfo;
 
 	protected override async Task OnInitializedAsync()
 	{
@@ -12,11 +12,11 @@ public partial class AboutMe
 
 	private async Task GetAsync()
 	{
-		aboutMeInfo = await ServiceClient.GetFromJsonAsync<AboutMeInfo>("api/aboutme");
+		_aboutMeInfo = await ServiceClient.GetFromJsonAsync<AboutMeInfo>("api/aboutme");
 
-		if (aboutMeInfo == null || aboutMeInfo.Image == null)
+		if (_aboutMeInfo == null || _aboutMeInfo.Image == null)
 			Snackbar.Add("데이터가 없습니다.", MudBlazor.Severity.Error);
 
-		_loading = false;
+		_isLoading = false;
 	}
 }

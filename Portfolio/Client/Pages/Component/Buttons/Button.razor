@@ -3,18 +3,18 @@
 <PageTitle>Button</PageTitle>
 
 <MudPaper Class="pa-4" Elevation="25">
-	<MudText Typo="Typo.h4" Class="my-1">Rendering</MudText>
-	<MudButton Class="ma-1" Variant="@_variant" StartIcon="@Icons.Material.Filled.Delete" Size="@_size" FullWidth="@_fullWidth" Disabled="@_disable">Default</MudButton>
-	<MudButton Class="ma-1" Variant="@_variant" EndIcon="@Icons.Material.Filled.Send" Size="@_size" FullWidth="@_fullWidth" Color="Color.Primary" Disabled="@_disable">Primary</MudButton>
-	<MudButton Class="ma-1" Variant="@_variant" FullWidth="@_fullWidth" Size="@_size" Color="Color.Secondary" Disabled="@_disable">Secondary</MudButton>
-	<MudButton Class="ma-1" Variant="@_variant" Color="Color.Warning" FullWidth="@_fullWidth" Size="@_size"  Disabled="@_disable">Disabled</MudButton>
-	<MudButton Class="ma-1" Href="https://github.com" Color="Color.Tertiary" Variant="@_variant" EndIcon="@Icons.Custom.Brands.GitHub" FullWidth="@_fullWidth" Size="@_size" Disabled="@_disable">Github Link</MudButton>
+	<MudText Class="my-1" Typo="Typo.h4">Rendering</MudText>
+	<MudButton Class="ma-1" Variant="@_variant" StartIcon="@Icons.Material.Filled.Delete" Size="@_size" FullWidth="@_isFullWidth" Disabled="@_isDisable">Default</MudButton>
+	<MudButton Class="ma-1" Variant="@_variant" EndIcon="@Icons.Material.Filled.Send" Size="@_size" FullWidth="@_isFullWidth" Color="Color.Primary" Disabled="@_isDisable">Primary</MudButton>
+	<MudButton Class="ma-1" Variant="@_variant" Color="Color.Secondary" FullWidth="@_isFullWidth" Size="@_size" Disabled="@_isDisable">Secondary</MudButton>
+	<MudButton Class="ma-1" Variant="@_variant" Color="Color.Warning" FullWidth="@_isFullWidth" Size="@_size" Disabled="@_isDisable">Disabled</MudButton>
+	<MudButton Class="ma-1" Href="https://github.com" Color="Color.Tertiary" Variant="@_variant" EndIcon="@Icons.Custom.Brands.GitHub" FullWidth="@_isFullWidth" Size="@_size" Disabled="@_isDisable">Github Link</MudButton>
 </MudPaper>
 
 <MudPaper Class="pa-4 my-4" Elevation="25">
-	<MudText Typo="Typo.h4" Class="my-2">Control</MudText>
-	<MudCheckBox @bind-Checked="_fullWidth" Label="Full Width" Color="Color.Primary"></MudCheckBox>
-	<MudSwitch Color="Color.Primary" @bind-Checked=@_disable Label="Disable" Class="ma-1" />
+	<MudText Class="my-2" Typo="Typo.h4">Control</MudText>
+	<MudCheckBox @bind-Checked="_isFullWidth" Label="Full Width" Color="Color.Primary"></MudCheckBox>
+	<MudSwitch Color="Color.Primary" @bind-Checked=@_isDisable Label="Disable" Class="ma-1" />
 	<MudSelect Class="my-1" @bind-Value="_size" Variant="Variant.Outlined" Label="크기">
 		<MudSelectItem Value="Size.Small">Small</MudSelectItem>
 		<MudSelectItem Value="Size.Medium">Medium</MudSelectItem>

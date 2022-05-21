@@ -13,5 +13,5 @@ global using MudBlazor;
 global using MudBlazor.Services;
 
 global using Portfolio.Client;
-global using Portfolio.Client.Preferences;
 global using Portfolio.Client.Components.Dialog;
+global using Portfolio.Client.Preferences;

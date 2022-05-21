@@ -1,6 +1,4 @@
-﻿using MudBlazor;
-
-namespace Portfolio.Client.Theme;
+﻿namespace Portfolio.Client.Theme;
 
 public class LightTheme : MudTheme
 {

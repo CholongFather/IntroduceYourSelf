@@ -2,9 +2,9 @@
 
 public partial class ButtonFab
 {
-	private Size _size { get; set; } = Size.Small;
-	private bool _disable { get; set; } = false;
-	private string _text { get; set; }
+	private bool _isDisable = false;
+	private string _text;
+	private Size _size = Size.Small;
 
 	protected override async Task OnInitializedAsync()
 	{

@@ -1,6 +1,4 @@
-﻿using MudBlazor;
-
-namespace Portfolio.Client.Preferences;
+﻿namespace Portfolio.Client.Preferences;
 
 public interface IClientPreferenceManager : IPreferenceManager
 {
