@@ -1,3 +1,63 @@
 ﻿@page "/monitoring/dashboard"
 
 <PageTitle>Dash Board</PageTitle>
+
+<MudGrid>
+@if (_isLoading)
+{
+	<MudItem>
+		<MudProgressCircular Indeterminate="true"></MudProgressCircular>
+	</MudItem>
+}
+else
+{
+	<MudItem xs=4>
+		<MudSelect @bind-Value="@_serverName" Label="서버 이름" Margin="Margin.Dense" Dense="true">
+			@foreach (var server in _serverNames)
+			{
+				<MudSelectItem Value="server">@server</MudSelectItem>
+			}
+		</MudSelect>
+	</MudItem>
+	<MudItem xs=3>
+		<MudDatePicker Class="my-1" @bind-Date="@_startAt" Label="Date" Required="true" />
+	</MudItem>
+	<MudItem xs=3>
+		<MudDatePicker Class="my-1" @bind-Date="@_endAt" Label="Date" Required="true"/>
+	</MudItem>
+	<MudItem Class="d-flex justify-content-center" xs=2>
+		<MudButton Class="ma-1" StartIcon="@Icons.Material.Filled.Refresh" Variant="Variant.Filled" Color="Color.Primary" OnClick="ReloadData">검색</MudButton>
+	</MudItem>
+	@if (_monitoringCpuList != null)
+	{
+		<MudItem xs=12>
+			<MudPaper Class="pa-4">
+				<MudText Typo="Typo.h4">Cpu</MudText>
+				<MudChart Class="pa-2" ChartType="ChartType.Line" ChartSeries="@_cpuSeries" XAxisLabels="@_cpuXAxisLabels" ChartOptions="options"></MudChart>
+			</MudPaper>
+		</MudItem>
+	}
+
+	@if (_monitoringMemoryList != null)
+	{
+		<MudItem xs=12>
+			<MudPaper Class="pa-4">
+				<MudText Typo="Typo.h4">Memory</MudText>
+				<MudChart Class="pa-2" ChartType="ChartType.Line" ChartSeries="@_memorySeries" XAxisLabels="@_memoryXAxisLabels" ChartOptions="options"></MudChart>
+			</MudPaper>
+		</MudItem>
+	}
+	@if (_monitoringDiskList != null)
+	{
+		foreach (var diskSeries in _diskSeriesList)
+		{
+			<MudItem xs=12>
+				<MudPaper Class="pa-4">
+					<MudText Typo="Typo.h4">@diskSeries.Key</MudText>
+					<MudChart Class="pa-2" ChartType="ChartType.Line" ChartSeries="@diskSeries.Value" XAxisLabels="@_diskXAxisLabels" ChartOptions="options"></MudChart>
+				</MudPaper>
+			</MudItem>
+		}
+	}
+}
+</MudGrid>

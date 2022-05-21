@@ -127,3 +127,11 @@ input {
 	color: var(--mud-palette-text-primary) !important;
 	background-color: var(--mud-palette-surface) !important;
 }
+
+.mud-charts-xaxis text {
+	font-size: 5px;
+}
+
+.mud-charts-yaxis text {
+	text-anchor: middle;
+}

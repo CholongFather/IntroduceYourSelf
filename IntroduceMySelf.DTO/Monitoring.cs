@@ -1,9 +1,10 @@
 namespace IntroduceMySelf.DTO;
 
-public class MonitoringCpuDateModel
+public class MonitoringRequest
 {
-	public string Date { get; set; }
-	public List<MonitoringCpuModel> CpuList { get; set; }
+	public string ServerName { get; set; }
+	public DateTime StartAt { get; set; }
+	public DateTime EndAt { get; set; }
 }
 
 public class MonitoringCpuModel
@@ -12,25 +13,12 @@ public class MonitoringCpuModel
 	public int ProcessTime { get; set; }
 }
 
-public class MonitoringMemoryDateModel
-{
-	public string Date { get; set; }
-	public List<MonitoringMemoryModel> MemList { get; set; }
-}
-
 public class MonitoringMemoryModel
 {
 	public string Time { get; set; }
 	public double UsageBytes { get; set; }
 	public double AvailableBytes { get; set; }
 }
-
-public class MonitoringDiskDateModel
-{
-	public string Date { get; set; }
-	public List<MonitoringDiskModel> DiskList { get; set; }
-}
-
 public class MonitoringDiskModel
 {
 	public string Time { get; set; }
@@ -38,14 +26,6 @@ public class MonitoringDiskModel
 	public double TotalFreeSpace { get; set; }
 	public double TotalUsedSpace { get; set; }
 	public double TotalSize { get; set; }
-}
-
-public class MonitoringWebDateModel
-{
-	public string Date { get; set; }
-	public List<MonitoringIisModel> IisList { get; set; }
-	public List<MonitoringWasModel> WasList { get; set; }
-	public List<MonitoringAppPoolModel> AppPoolList { get; set; }
 }
 
 public class MonitoringIisModel
@@ -71,12 +51,6 @@ public class MonitoringAppPoolModel
 	public double CurrenttApplicationPoolState { get; set; }
 	public double TotalApplicationPoolRecycles { get; set; }
 	public double WorkerProcessCreated { get; set; }
-}
-
-public class MonitoringSqlDateModel
-{
-	public string Date { get; set; }
-	public List<MonitoringSqlModel> SqlList { get; set; }
 }
 
 public class MonitoringSqlModel
